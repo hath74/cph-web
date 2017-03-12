@@ -1,0 +1,60 @@
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($animation-values) {
+  -webkit-animation: $animation-values;
+          animation: $animation-values;
+}
+
+@mixin transform($transform-values...) {
+  -webkit-transform: $transform-values;
+          transform: $transform-values;
+}
+
+// Animations
+@include keyframes(slide-down) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(-2em));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(slide-up) {
+  from {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+  to {
+    opacity: 0;
+    @include transform(translateY(-1em));
+  }
+}
+
+.expander-open {
+  @include transition(all 0.2s ease-in-out);
+  @include animation(slide-down 0.3s);
+}
+
+.expander-closed {
+  @include transition(all 0.2s ease-in-out);
+  @include animation(slide-up 0.3s);
+}
+
+.slide-toggle {
+  overflow: hidden;
+  @include transition(all 0.2s ease-in-out);
+  clear: both;
+  display: table;
+  width: 100%;
+  //@include margin(0 0 15px 0);
+}

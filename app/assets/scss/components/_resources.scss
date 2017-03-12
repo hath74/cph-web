@@ -1,0 +1,64 @@
+.resources {
+  &__sub {
+    padding-left: em(40);
+  }
+
+  &__footnote {
+    display: inline-block;
+    font-size: $base-font-size - 4 + px;
+  }
+
+  strong {
+    &.--italic {
+      font-style: italic;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    padding-top: em(10);
+    color: palette(blue);
+
+    &.--alpha {
+      margin-bottom: em(20);
+    }
+    &.--secondary {
+      color: palette(blue, bright);
+    }
+  }
+
+  p {
+    margin-bottom: em(30);
+  }
+
+  ul {
+    margin-bottom: em(30);
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: em(40);
+  }
+
+  li {
+    margin-bottom: em(10);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .inner {
+    margin-top: em(40);
+  }
+
+  .squeezebox {
+    @extend .fadeInLeft;
+    @extend .animated;
+  }
+
+  .select {
+    @include media($xxlarge-up) {
+      @include span-columns(4);
+      @include shift(8);
+    }
+  }
+}

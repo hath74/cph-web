@@ -1,0 +1,168 @@
+.tables {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: palette(gray, dark) !default;
+  $light-gray: lighten(palette(gray),50%) !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $table-border-color: $base-border-color;
+  $table-border: 1px solid $table-border-color;
+  $table-background: lighten($table-border-color, 12%);
+  $table-header-background: lighten($table-background, 10%);
+  $table-hover-background: darken($table-background, 5%);
+  $table-stripe-background: darken($table-background, 2%);
+  $table-stripe-background-hover: darken($table-stripe-background, 5%);
+  $table-padding: 0.75em 1em;
+  input[type='color'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='email'],
+  input[type='month'],
+  input[type='number'],
+  input[type='password'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='text'],
+  input[type='time'],
+  input[type='url'],
+  input[type='week'],
+  textarea,
+  select[multiple=multiple],
+  textarea,
+  select,
+  number {
+    margin-bottom: 0;
+  }
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: $base-border-radius;
+  border-spacing: 0;
+  border: $table-border;
+  width: 100%;
+  tbody {
+    background-color: $table-background;
+    tr:hover >td,
+    tr:hover >th {
+      background-color: $table-hover-background;
+    }
+    tr:nth-child(even) {
+      background-color: $table-stripe-background;
+      &:hover >td {
+        background-color: $table-stripe-background-hover;
+      }
+    }
+  }
+  thead:first-of-type {
+    tr:first-child >th:first-child {
+      border-top-left-radius: $base-border-radius;
+    }
+    tr:first-child >th:last-child {
+      border-top-right-radius: $base-border-radius;
+    }
+  }
+  tbody:last-child {
+    tr:last-child >td:first-child {
+      border-bottom-left-radius: $base-border-radius;
+    }
+    tr:last-child >td:last-child {
+      border-bottom-right-radius: $base-border-radius;
+    }
+  }
+  thead {
+    th {
+      background-color: palette(blue);
+      border-bottom: 0;
+      border-left: 1px solid $table-border-color;
+      padding: $table-padding;
+      text-align: left;
+      color: palette(white);
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+  tbody {
+    background-color: $table-background;
+    td {
+      border-bottom: 0;
+      border-left: 1px solid $table-border-color;
+      border-top: 1px solid $table-border-color;
+      padding: $table-padding;
+      position: relative;
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
+.table-minimal {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: palette(gray, dark) !default;
+  $light-gray: lighten(palette(gray),50%) !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $table-border-color: $base-border-color;
+  $table-border: 1px solid $table-border-color;
+  $table-background: $base-background-color;
+  $table-header-background: lighten($table-background, 10);
+  $table-hover-background: darken($table-background, 2);
+  $table-stripe-background: darken($table-background, 4);
+  $table-stripe-background-hover: darken($table-stripe-background, 5);
+  $table-padding: 0.75em 1em;
+  position: relative;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  @include media($xlarge-up) {
+    font-size: $base-font-size + px;
+  }
+
+  @include media($xlarge-down) {
+    font-size: $base-font-size - 2 + px;
+  }
+
+  @include media($small-down) {
+    font-size: 11px;
+  }
+
+  tr {
+    position: relative;
+  }
+  tbody {
+    tr:hover >td,
+    tr:hover >th {
+      background-color: $table-hover-background;
+    }
+    tr:first-child td {
+      border-top: 2px solid $table-border-color;
+    }
+  }
+  thead {
+    th {
+      background-color: $table-header-background;
+      border-bottom: 0;
+      padding: $table-padding;
+      text-align: left;
+    }
+  }
+  tbody {
+    background-color: $table-background;
+    td {
+      border-bottom: 0;
+      border-top: 1px solid $table-border-color;
+      padding: $table-padding;
+    }
+  }
+}

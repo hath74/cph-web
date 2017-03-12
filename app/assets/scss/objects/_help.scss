@@ -1,0 +1,70 @@
+
+.help {
+  $font-size: 23;
+
+  @include transition(all 0.2s ease-in-out);
+
+  &.select {
+    width: 95%;
+    select {
+      width: 95%;
+    }
+  }
+
+  &--default {
+    @include pointer;
+    color: palette(orange);
+    font-size: $font-size - 3 + px;
+    &:hover {
+      color: lighten(palette(orange), 20%);
+    }
+  }
+
+  &--select {
+    @include pointer;
+    color: palette(orange);
+    font-size: $font-size + px;
+    position: absolute;
+    right: -40px;
+    &:hover {
+      color: lighten(palette(orange), 20%);
+    }
+  }
+
+  &--input-wrapper {
+    padding-right: em(50);
+  }
+
+  &--input {
+    @include pointer;
+    position: absolute;
+    color: palette(orange);
+    font-size: $font-size + px;
+    right: 10px;
+    .fa {
+      // background: #ffffff;
+      padding-left: em(10);
+    }
+    &:hover {
+      color: lighten(palette(orange), 20%);
+    }
+  }
+
+  &--input-search {
+    @include pointer;
+    position: absolute;
+    color: palette(white);
+    font-size: $base-font-size + 2 + px;
+    background: palette(orange);
+    right: 1px;
+    top: 1px;
+    width: 32px;
+    height: 38px;
+    .fa {
+      @include padding(10px null null 5px);
+    }
+    &:hover {
+      color: lighten(palette(orange), 20%);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.schedule {
+  @include margin(null em($section-padding));
+
+  @include media($xxlarge-up) {
+    @include margin(null em($section-padding + 40));
+  }
+}

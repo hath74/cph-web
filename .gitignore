@@ -1,0 +1,8 @@
+/node_modules
+/.tmp
+/app/bower_components
+/.idea
+/app/assets/.sass-cache
+/.sass-cache
+/app/uploads
+/bower_components

@@ -1,0 +1,518 @@
+
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: $base-font-size + px;
+  line-height: $line-height-ratio;
+}
+
+// Border Box all the things!
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: 0;
+  outline-style: none !important;
+}
+
+body {
+  @include font-feature-settings('liga', 'kern', 'pnum', 'case');
+  color: $default-body-color;
+  font-family: $base-font-family;
+  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 250px;
+
+  &.-no-scroll {
+    overflow: hidden;
+  }
+  @include media($xlarge-up) {
+    padding-bottom: 150px;
+  }
+}
+
+a {
+  @include pointer;
+  @include transition( all 0.2s ease-in-out );
+  color: $default-link-color;
+
+  &:hover {
+    color: $default-link-color-hover;
+  }
+}
+
+//Site wrapper
+.site {
+  @include transition(all 0.2s ease-in-out );
+  @include fadeIn(1s);
+}
+
+//Main column
+.main {
+  @include span-columns(9);
+  position: relative;
+  padding-left: 2.35765%;
+  flex-grow: 1;
+  padding-right: em(25);
+
+  &--full-width {
+    @include span-columns(12);
+    border: none;
+    padding-right: 2.35765%;
+  }
+}
+
+//header 
+.header-student {
+  @include padding(em(40) em(20));
+  border-bottom: $default-border;
+
+  &__brand {
+    float: left;
+
+    @include media($xxlarge-up) {
+      margin-left: em(15);
+    }
+  }
+
+  &__utility {
+    float: right;
+    padding-top: em(10);
+    @include media($xxlarge-up) {
+      margin-right: em(20);
+    }
+  }
+
+  &__utility-link {
+    list-style: none;
+    display: inline;
+
+    a {
+      text-transform: uppercase;
+      color: palette(blue, slateLight);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: palette(blue, slateDark);
+    }
+
+    &:after {
+      @include margin(0 em(15) 0 em(20));
+      @include padding(em(4) 0);
+      content: '';
+      height: inherit;
+      border-left: $default-border;
+    }
+
+    &:last-child:after {
+      @include padding(0);
+      @include margin(0);
+      border: none;
+    }
+  }
+}
+
+.header {
+  @include transition(all 0.2s ease-in-out );
+  padding: em(70) em(15) em(40) em(15);
+  border-bottom: $default-border;
+  @include media($utility-nav) {
+    padding-top: em(40);
+  }
+  &__brand {
+    float: left;
+
+    @include media($xxlarge-up) {
+      margin-left: em(15);
+    }
+  }
+
+  &__logo-large {
+    @include fadeIn(1s);
+    display: block;
+    margin-right: em(60);
+    @include media($xlarge-down) {
+      display: none;
+    }
+  }
+
+  &__logo-small {
+    margin-right: em(40);
+    display: none;
+    @include media($xlarge-down) {
+      @include fadeIn(1s);
+      height: 60px;
+      margin-top: -11px;
+      display: block;
+    }
+    @include media($small-down) {
+      margin-top: -15px;
+    }
+  }
+
+  &__utility {
+    position: absolute;
+    top: -65px;
+    right: 15px;
+    padding-top: em(10);
+    @include media($utility-nav) {
+      top: -8px;
+    }
+  }
+
+  &__utility-link {
+    list-style: none;
+    display: inline;
+
+    a {
+      text-transform: uppercase;
+      color: palette(blue, slateLight);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: palette(blue, slateDark);
+    }
+
+    &:after {
+      @include margin(0 em(15) 0 em(20));
+      @include padding(em(4) 0);
+      content: '';
+      height: inherit;
+      border-left: $default-border;
+    }
+
+    &:last-child:after {
+      @include padding(0);
+      @include margin(0);
+      border: none;
+    }
+  }
+  .container {
+    position: relative;
+  }
+}
+
+//primary nav 
+.primary-nav {
+  >.button {
+    margin-right: em(10);
+    font-size: $base-font-size + 2 + px;
+    @include media($xxlarge-up) {
+      margin-right: em(15);
+    }
+    @include media($small-down) {
+      font-size: em($base-font-size - 1);
+      margin-bottom: em(10);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &--description-new-users {
+    &:before {
+      @include margin(em(-35) 0 0 em(-20));
+      color: palette(gray, dark);
+      font-size: $base-font-size + px;
+      font-weight: normal;
+      position: absolute;
+      content: '(New Users)';
+    }
+  }
+}
+
+//Footer 
+.footer {
+  @include pad(em(30) 0);
+  clear: both;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  min-height: 250px;
+  background: palette(blue, slateDark);
+  @include media($xlarge-up) {
+    min-height: 150px;
+  }
+  &__block {
+    @include media($to-xlarge) {
+      text-align: center;
+    }
+
+
+    @include media($large-only) {
+      @include span-columns(10);
+
+      @include shift(1);
+      float: none;
+    }
+
+
+    @include media($xlarge-up) {
+      @include span-columns(6);
+    }
+
+
+    &:first-child {
+      @include media($to-xlarge) {
+        margin-bottom: em(30);
+      }
+    }
+
+    &:last-child {
+      @include media($xlarge-up) {
+        text-align: right;
+      }
+    }
+  }
+
+
+  &__cta {
+    h4 {
+      color: palette(white);
+      margin-bottom: em(20);
+      font:  {
+        family: $family-open-sans;
+        size: em($base-font-size + 2);
+      }
+    }
+  }
+
+  &__community {
+    @include media($to-xlarge) {
+      margin-bottom: em(50);
+    }
+
+
+    @include media($xlarge-up) {
+      margin-bottom: em(25);
+    }
+
+
+    h5 {
+      color: palette(white);
+      font:  {
+        family: $family-open-sans;
+        size: em(14);
+      };
+
+      @include media($medium-up) {
+        margin: 0 em(10) 0 0;
+      }
+    }
+  }
+
+  &__social-links,
+  h5 {
+    @include media($medium-up) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__links {
+    font-size: em(14);
+    margin-bottom: em(5);
+
+    >li {
+      display: inline-block;
+      padding: 0;
+    }
+
+    a {
+      @include pad(em(3));
+      color: palette(white);
+      text-decoration: underline;
+
+      &:hover {
+        color: palette(blue, lighter);
+      }
+    }
+  }
+
+  &__copyright {
+    color: palette(white);
+    font:  {
+      size: em(11);
+    };
+
+    a {
+      @include pad(0 em(5));
+      color: palette(white);
+      display: inline-block;
+
+      &:hover {
+        color: palette(blue, lighter);
+      }
+    }
+  }
+  &__divider {
+    @include pad(0 em(10));
+  }
+}
+
+h2 {
+  font-family: $family-open-sans;
+  font-size: em($base-font-size + 14);
+  color: palette(blue);
+  font-weight: 600;
+  @include margin(0);
+  @include padding(0);
+  &.standard {
+    text-transform: none;
+    margin-bottom: 10px;
+  }
+}
+
+h1 {
+  @extend h2;
+  text-transform: uppercase;
+  &.standard {
+    text-transform: none;
+    margin-bottom: 10px;
+  }
+}
+
+h4 {
+  @extend h2;
+  font-size: em(18);
+}
+
+h3 {
+  @extend h2;
+  font-size: em(20);
+  margin-bottom: em(15);
+  &.--alpha {
+    font-size: em(23);
+  }
+  &.--secondary {
+    color: palette(blue, bright);
+  }
+}
+
+hr {
+  @include clearfix;
+  border: none;
+  height: 1px;
+  background: palette(gray, light);
+
+  &.hr--spaced {
+    @include margin(em(40) null);
+  }
+}
+
+.row {
+  @include row;
+}
+
+.fade-in {
+  @include fadeIn(1s);
+}
+
+.fade-out {
+  @include fade-out(1s);
+}
+
+.center-text {
+  text-align: center;
+}
+
+%clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.inactive {
+  color: palette(red);
+}
+
+.subhead {
+  color: palette(blue, bright);
+}
+
+.select-arrow {
+  position: absolute;
+  width: 33px;
+  height: 10px;
+  top: 6px;
+  right: 0;
+  pointer-events: none;
+}
+
+.sort-arrow .fa {
+  color: #617391;
+  border-left: 1px solid lighten(palette(gray),50%);
+  padding-left: 10px;
+  margin-left: 3px;
+}
+
+.selector:before,
+.select:after {
+  content: ' ';
+  position: absolute;
+  pointer-events: none;
+}
+
+.selector:before {
+  width: 2.25em;
+  height: 32px;
+  top: 1px;
+  right: 2px;
+  background-color: #ffffff;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.tp {
+  font-family: $family-trajan-pro;
+}
+
+.disabled {
+  color: lighten(palette(gray), 35%);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+// Use to hide things from the front-end
+.visuallyhidden {
+  display: none;
+  height: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.spacer {
+  @include clearfix;
+  @include margin(em(40) null);
+
+  &--small {
+    @include margin(em(20) null);
+  }
+}

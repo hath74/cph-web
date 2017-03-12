@@ -1,0 +1,215 @@
+.modal {
+  $base-border-color: #dcdcdc !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: #ffffff !default;
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: palette(gray, dark) !default;
+  $light-gray: lighten(palette(gray),50%) !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $modal-padding: 3em;
+  $modal-background: $base-background-color;
+  $modal-close-color: lighten(palette(gray),50%);
+  $modal-image-height: 135px;
+  $modal-image-width: $modal-image-height;
+  $modal-trigger-image-width: 300px;
+  label {
+    cursor: pointer;
+  }
+  label img {
+    border-radius: $modal-trigger-image-width / 2;
+    display: block;
+    max-width: $modal-trigger-image-width;
+  }
+  .modal-state {
+    display: none;
+  }
+  .modal-trigger {
+    padding: 0.8em 1em;
+  }
+  .modal-fade-screen {
+    // overlay
+    @include transition(opacity 0.25s ease);
+    @include position(fixed, 0 -20px 0 0);
+    background-color: rgba(#1c4e67, 0.8);
+    opacity: 0;
+    padding-top: 0.6em;
+    text-align: left;
+    visibility: hidden;
+    z-index: 99999999999;
+    overflow-y: scroll;
+    @include media($large-screen) {
+      padding-top: 10em;
+    }
+    .modal-bg {
+      @include position(absolute, 0);
+      cursor: pointer;
+    }
+  }
+  .close-overlay {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+  }
+  .modal-close {
+    @include position(absolute, ($modal-padding / 2) ($modal-padding / 2) null null);
+    @include size(1.5em);
+    background: $modal-background;
+    cursor: pointer;
+    z-index: 99999999;
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $modal-close-color;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10%);
+    }
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+  .modal-inner {
+    @include transition(opacity 0.25s ease);
+    background: $modal-background;
+    border-radius: $base-border-radius;
+    margin-top: 0;
+    margin: auto;
+    overflow: hidden;
+    padding: $modal-padding / 2;
+    position: relative;
+    width: 95%;
+    z-index: 999;
+    margin-bottom: em($section-padding);
+    @include media($medium-screen) {
+      width: 600px;
+    }
+    @include media($large-screen) {
+      width: 600px;
+    }
+    h1 {
+      color: $base-font-color;
+      margin-bottom: 0 0 0.6em 0;
+      text-align: left;
+      text-transform: capitalize;
+    }
+    p {
+      //color: $base-font-color;
+      //line-height: $base-line-height;
+    }
+    strong {
+      color: palette(blue);
+    }
+    hr {
+      margin: 0.5em 0;
+    }
+    .modal-intro {
+      margin-bottom: 1em;
+    }
+    .modal-content {
+      color: $base-font-color;
+      @include media($medium-screen) {
+        @include columns(2 8em);
+      }
+    }
+    a.cta {
+      color: $base-background-color;
+      display: inline-block;
+      margin-right: 0.5em;
+      margin-top: 1em;
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+  .modal-fade-screen {
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .modal-fade-screen.active .modal-inner {
+    top: 1.0em;
+  }
+}
+
+.modal-trigger {
+  //padding:0;
+  label {
+    margin-bottom: 0;
+    //padding: 0.60em 1em;
+    cursor: pointer;
+  }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+button.close {
+  @include position(absolute, 0 5px null null);
+  @include appearance(none);
+  color: transparentize(#1c4e67, 0.7);
+  //color:#fff;
+  outline: 0;
+  font-size: 30px;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
+
+.modal-header {
+  @include center-text;
+  @include margin(0 0 em(40) 0);
+  border-bottom: $default-border;
+  h2 {
+    font-size: 32px;
+    padding-bottom: 8px;
+    font-weight: normal;
+    color: palette(blue, bright);
+    &.--default {
+      color: palette(blue);
+    }
+    p {
+      @include margin(em(4) 0 0 0);
+      @include padding(0);
+      color: palette(blue);
+      font-size: 13px;
+    }
+  }
+  .subhead {
+    display: block;
+    margin-top: 10px;
+    font-size: $base-font-size + 4 + px;
+    span {
+      color: palette(gray, dark);
+    }
+  }
+}
+
+
+
+
+
+.modal-wrapper {
+  @include fadeIn(1s);
+}
+
+// Based on code by Kasper Mikiewicz

@@ -1,0 +1,129 @@
+.vertical-tabs-container {
+  $base-border-color: palette(gray, light) !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: palette(gray, lightest) !default;
+  $base-line-height: 1em !default;
+  $base-spacing: 1em !default;
+  $action-color: white !default;
+  $dark-gray: #333333 !default;
+  $medium-screen: 40em !default;
+  $base-font-color: $dark-gray !default;
+  $tab-border-color: $base-border-color;
+  $tab-border: 1px solid $tab-border-color;
+  $tab-border-active: 1px solid white;
+  $tab-border-radius: $base-border-radius;
+  $tab-content-background: white;
+  $tab-active-color: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $vertical-tabs-height: auto;
+  $vertical-tab-mode: $medium-screen;
+  @include clearfix;
+  border-top: $tab-border;
+  border-radius: $tab-border-radius;
+  margin-bottom: $base-spacing;
+  overflow: hidden;
+  li {
+    list-style: none;
+  }
+  a {
+    color: $action-color;
+    text-decoration: none;
+  }
+  .vertical-tabs {
+    display: none;
+    border-right: $tab-border;
+    @include media($vertical-tab-mode) {
+      background-color: $tab-content-background;
+      display: inline;
+      float: left;
+      height: $vertical-tabs-height;
+      width: 20%;
+    }
+  }
+  .vertical-tab {
+    @include media($vertical-tab-mode) {
+      position: relative;
+      font-family: $family-trajan-pro;
+      font-size: em($base-font-size - 1);
+      border-bottom: $tab-border;
+      display: block;
+      margin-right: -1px;
+      padding: ($base-spacing) ($gutter / 4);
+      background-color: $tab-inactive-color;
+      &:hover {
+        color: palette(orange);
+      }
+      &.is-active {
+        background-color: $tab-content-background;
+        margin-right: -1px;
+        border-right: $tab-border-active;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          top: 0;
+          right: -2px;
+          background: inherit;
+        }
+      }
+    }
+    @include media($xlarge-up) {
+      text-transform: uppercase;
+    }
+  }
+  a.vertical-tab-accordion-heading,
+  a.vertical-tab {
+    color: palette(blue);
+  }
+  .vertical-tab:focus {
+    outline: none;
+  }
+  .vertical-tab-content-container {
+    display: block;
+    margin: 0 auto;
+    border-left: $tab-border;
+    & a:focus {
+      outline: none;
+    }
+    @include media($vertical-tab-mode) {
+      @include size(80% $vertical-tabs-height);
+      background-color: $tab-content-background;
+      display: inline-block;
+    }
+  }
+  .vertical-tab-content {
+    background-color: $tab-content-background;
+    padding: em(60) 0 em(60) em(20);
+    p {
+      color: $base-font-color;
+    }
+    @include media($xxlarge-up) {
+      padding: em(60) $gutter - 1.5 em(60) $gutter;
+    }
+  }
+  .vertical-tab-accordion-heading {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    padding: $base-spacing / 2 $gutter / 2;
+    &:focus,
+    &:hover {
+      color: $action-color;
+    }
+    &:first-child {
+      border-top: 0;
+    }
+    &.is-active {
+      background: $tab-active-color;
+      border-bottom: 0;
+    }
+    @include media($vertical-tab-mode) {
+      display: none;
+    }
+  }
+}
+
+// Based on code by Jett Miller jettmiller.net

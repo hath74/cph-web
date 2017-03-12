@@ -1,0 +1,25 @@
+.cc-manager {
+  @include animation(fadeIn 0.6s ease-in);
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__upload {
+    display: inline-block;
+    margin-right: 10px;
+
+    button {
+      height: 36px;
+    }
+  }
+
+  &__search {
+    @include media($small-down) {
+      width: 65%;
+    }
+
+    display: inline-block;
+    width: 73%;
+  }
+}

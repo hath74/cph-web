@@ -1,0 +1,42 @@
+.cc-upload {
+  &__file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__video-col {
+    @include span-columns(9);
+  }
+
+  &__browse-col {
+    @include span-columns(3);
+    @include omega();
+    >.button {
+      @include padding(null 0);
+      width: 100%;
+    }
+  }
+
+  &__progress {
+    margin-bottom: em(20);
+  }
+
+  &__error-text {
+    margin-top: 15px;
+    color: darken(palette(red),17%);
+    font-weight: 700;
+  }
+
+  &__details {
+    @include fadeIn(1s);
+    @include margin(em(20) null);
+    @include padding(em(2) em(7));
+    color: palette(blue);
+    background: lighten(palette(blue, lightest), 5%);
+    border-radius: 2px;
+  }
+}

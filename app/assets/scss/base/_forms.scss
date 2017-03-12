@@ -1,0 +1,80 @@
+//  $$$$$$$$\
+//  $$  _____|
+//  $$ |    $$$$$$\   $$$$$$\  $$$$$$\$$$$\   $$$$$$$\
+//  $$$$$\ $$  __$$\ $$  __$$\ $$  _$$  _$$\ $$  _____|
+//  $$  __|$$ /  $$ |$$ |  \__|$$ / $$ / $$ |\$$$$$$\
+//  $$ |   $$ |  $$ |$$ |      $$ | $$ | $$ | \____$$\
+//  $$ |   \$$$$$$  |$$ |      $$ | $$ | $$ |$$$$$$$  |
+//  \__|    \______/ \__|      \__| \__| \__|\_______/
+//
+//
+//
+// Nope, iOS. Nope.
+input {
+  border-radius: 0;
+}
+
+fieldset {
+  border: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+form {
+  width: 100%;
+}
+
+.form-row {
+  @include outer-container;
+  position: relative;
+
+  &--spaced {
+    @include pad( em($line-height-ratio / 2) 0);
+    margin-bottom: em(20);
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+#{$all-text-inputs},
+textarea,
+select {
+  font-size: $base-font-size + px;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: palette(blue);
+  font-size: $base-font-size + 3 + px;
+  margin-bottom: em(10);
+  strong {
+    font-weight: 600;
+  }
+  &.--basic {
+    color: palette(gray, dark);
+    font-size: $base-font-size + px;
+  }
+}
+
+.label--underlined {
+  border-bottom: $default-border;
+  padding-bottom: em(8);
+  margin-bottom: em(20);
+}

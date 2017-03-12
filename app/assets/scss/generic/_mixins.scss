@@ -1,0 +1,370 @@
+
+// ---------------------------------------------------------------------------------
+// Image Replacement
+// ---------------------------------------------------------------------------------
+
+@mixin img-replacement($width, $height, $display: block) {
+	display: $display;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: $width;
+	height: $height;
+}
+
+// ---------------------------------------------------------------------------------
+// Modernizr SVG Fallback
+// Inspired by https://forrst.com/posts/Sass_Compass_Mixin_for_SVG_Background_Image_Fall-dWn
+// ---------------------------------------------------------------------------------
+
+// Mixin for browsers that do not support .svg and also IE8 because, well, IE8.
+@mixin no-svg { .no-svg & { @content } }
+
+@mixin svg-bg($filename, $pos-x: 0, $pos-y: 0, $repeat: no-repeat, $extension: '.png') {
+	background-image: url($bg-img-path + $filename + '.svg');
+	background-position: $pos-x $pos-y;
+	background-repeat: $repeat;
+	@include no-svg {
+		background-image: url($bg-img-path + $filename + $extension);
+		background-position: $pos-x $pos-y;
+		background-repeat: $repeat;
+	}
+}
+
+//utilities
+@mixin center-text {
+    text-align: center;
+}
+
+@mixin pointer {
+    cursor: pointer;
+}
+
+@mixin rounded-corners($radius) {
+    border-radius: $radius;
+}
+
+@mixin fade-hover($bgcolor) {
+    @include transition(all 0.4s ease-in-out);
+    //cursor: pointer;
+    &:hover {
+        background-color: transparentize($bgcolor, 0.5);
+    }
+    &:disabled {
+        &:hover {
+            background-color: transparentize($bgcolor, 0);
+        }
+    }
+}
+
+@mixin gem-question($color) {
+    color: $color;
+    cursor: pointer;
+    &:hover {
+        @include transition(all 0.4s ease-in-out);
+        opacity: 0.5;
+    }
+}
+
+@mixin fadeOut {
+    @include transition(all 0.4s ease-in-out);
+    opacity: 0;
+    display: none;
+}
+
+// Fade In
+$prefix: "-moz-",
+"-webkit-",
+"-o-",
+"-ms-",
+"";
+// ********************
+// fadeIn
+// ********************
+@mixin keyframe-fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    @include keyframe-fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+    @include keyframe-fadeIn;
+}
+
+@-o-keyframes fadeIn {
+    @include keyframe-fadeIn;
+}
+
+@-ms-keyframes fadeIn {
+    @include keyframe-fadeIn;
+}
+
+@keyframes fadeIn {
+    @include keyframe-fadeIn;
+}
+
+@mixin fadeIn($arg) {
+    $keyframe-name: fadeIn;
+    $duration: $arg;
+    @each $p in $prefix {
+        #{$p}animation: $keyframe-name $duration;
+    }
+}
+
+
+
+// ********************
+// fadeOut
+// ********************
+@mixin keyframe-fadeOut {
+    100% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes fadeOut {
+    @include keyframe-fadeOut;
+}
+
+@-webkit-keyframes fadeOut {
+    @include keyframe-fadeOut;
+}
+
+@-o-keyframes fadeOut {
+    @include keyframe-fadeOut;
+}
+
+@-ms-keyframes fadeOut {
+    @include keyframe-fadeOut;
+}
+
+@keyframes fadeOut {
+    @include keyframe-fadeOut;
+}
+
+@mixin fade-out($arg, $stall:"") {
+    $keyframe-name: fadeOut;
+    $duration: $arg;
+    $delay: $stall;
+    @each $p in $prefix {
+        #{$p}animation: $keyframe-name $duration $stall;
+    }
+    display:none;
+}
+
+// Flashes
+@mixin flash($color) {
+    position: relative;
+    background-color: $color;
+    color: darken(palette(white), 10%);
+    display: block;
+    margin-bottom: $base-spacing / 2;
+    padding: $base-spacing / 2;
+    text-align: center;
+    width: 80%;
+    @include margin(0 auto);
+    a {
+        color: palette(white);
+        text-decoration: underline;
+        &:focus,
+        &:hover {
+            color: darken(palette(white), 10%);
+        }
+    }
+    .fa {
+        position: absolute;
+        top: .3em;
+        right: .2em;
+    }
+}
+
+//Down Arrow
+@mixin arrows($top, $left, $size, $color, $direction) {
+    &:before {
+        content: "";
+        @include triangle($size, $color, $direction);
+        position: absolute;
+        top: $top;
+        left: $left;
+    }
+}
+
+//vertical align element
+@mixin vertical-align($amount, $amount-negative) {
+    @include position(relative, $amount null null null);
+    @include transform(translateY($amount-negative));
+}
+
+//label checkbox
+@mixin label-checkbox($checkbox-color, $checkmark-color, $checkmark-bg) {
+    label {
+        font-weight: normal;
+        width: 100%;
+    }
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        @include position(absolute, null null null -9999px);
+    }
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        @include position(relative);
+        @include padding(0 0 0 22px);
+        cursor: pointer;
+    }
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+        content: '';
+        @include position(absolute, 0 null null 2px);
+        @include size(16px);
+        border: none;
+        background: $checkbox-color;
+        border-radius: 0;
+    }
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        @include transform(translate(0, 0));
+        content: '\f00c';
+        @include position(absolute, 0 null null 2px);
+        background-color: $checkmark-bg;
+        font-size: 16px;
+        color: $checkmark-color;
+        @include transition(all 0.2s ease-in-out);
+    }
+    [type="checkbox"]:not(:checked) + label:after {
+        opacity: 0;
+        @include transform(scale(0));
+    }
+    [type="checkbox"]:checked + label:after {
+        opacity: 1;
+        @include transform(scale(1));
+    }
+    /* disabled checkbox */
+    [type="checkbox"]:disabled:not(:checked) + label:before,
+    [type="checkbox"]:disabled:checked + label:before {
+        box-shadow: none;
+        border-color: none;
+        background-color: lighten(palette(gray), 35%);
+    }
+    [type="checkbox"]:disabled:checked + label:after {
+        color: lighten(palette(gray), 20%);
+    }
+    [type="checkbox"]:disabled + label {
+        color: lighten(palette(gray), 20%);
+        cursor: not-allowed;
+    }
+    
+    /* accessibility */
+    [type="checkbox"]:checked:focus + label:before,
+    [type="checkbox"]:not(:checked):focus + label:before {
+        border: none;
+    }
+}
+
+//underline
+@mixin underline($width, $style, $color, $percentage) {
+    border-bottom: $width $style lighten($color, $percentage);
+}
+
+//gem button
+@mixin gem-button($color, $button-color) {
+    button {
+        background-color: $button-color;
+        color: $color;
+        border: 0;
+        @include fade-hover($button-color);
+        span.arrow {
+            opacity: 0.5;
+        }
+    }
+}
+
+@mixin selection-indicator {
+    @include animation(fadeOutDownBig 1.5s both);
+    @include keyframes(fadeOutDownBig) {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+            @include transform(translate3d(0, 400px, 0));
+        }
+    }
+}
+
+// Forms
+$placeholders: "-webkit-input-placeholder",
+"-moz-placeholder",
+"-ms-input-placeholder";
+@mixin input-icons {
+    .fa-input-wrapper {
+        @include position(relative);
+        .fa {
+            @include position(absolute, null null 11px 8px);
+            font-size: 0.875em;
+        }
+        input {
+            @include padding(0 0 0 15px);
+        }
+    }
+}
+
+// @mixin placeholders {
+//     @each $placeholder in $placeholders {
+//         @if $placeholder=="-webkit-input-placeholder" {
+//             "&::" + $placeholder {
+//                 @content;
+//             }
+//         }
+//         @else {
+//             "&:" + $placeholder {
+//                 @content;
+//             }
+//         }
+//     }
+// }
+
+
+// ---------------------------------------------------------------------------------
+// 3d Transform Mixin
+// ---------------------------------------------------------------------------------
+@mixin hardware-acceleration {
+	@include transform( translate3d( 0, 0, 0 ) );
+	@include backface-visibility(hidden);
+	@include perspective(1000);
+}
+
+// ---------------------------------------------------------------------------------
+// Hide Checkbox Input with IE Fallback
+// ---------------------------------------------------------------------------------
+
+@mixin hide-checkbox() {
+	display: none;
+
+	@include lt-ie9() {
+		display: block;
+		position: absolute;
+		clip: rect(0 0 0 0);
+	}
+}
+
+// ---------------------------------------------------------------------------------
+// Less Than IE9
+// ---------------------------------------------------------------------------------
+
+@mixin lt-ie9 { .lt-ie9 & { @content } }

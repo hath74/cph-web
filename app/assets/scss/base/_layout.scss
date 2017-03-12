@@ -1,0 +1,50 @@
+header {
+  @include padding(15px 0);
+}
+
+.container {
+  @include outer-container;
+  &--flex {
+    display: flex;
+  }
+  &.container--outer {
+    padding:  {
+      left: em(10) !important;
+      right: em(10) !important;
+    }
+  }
+}
+
+section {
+  @include clearfix;
+}
+
+// .is-hidden {
+//   max-height: 0;
+//   max-width: 0;
+//   margin: 0;
+//   overflow: hidden;
+//   opacity: 0;
+//   padding: 0;
+// }
+
+// .is-visible {
+//   max-height: em(999);
+//   margin: inherit;
+//   opacity: 1.0;
+//   overflow: auto;
+//   padding: inherit;
+// }
+
+// // Helpers
+// .align-left {
+//   text-align: left;
+// }
+
+// .align-center {
+//   text-align: center;
+// }
+
+// .align-right {
+//   text-align: right;
+// }

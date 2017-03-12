@@ -1,0 +1,93 @@
+.tabs {
+  @include clearfix;
+  font-family: $family-trajan-pro;
+  font-size: em($base-font-size +2);
+  $base-background-color: palette(white) !default;
+  $base-spacing: 1.5em !default;
+  $base-border-color: palette(gray, light) !default;
+  $medium-screen: em(640) !default;
+  $tab-border: 1px solid $base-border-color;
+  $tab-border-active: 3px solid palette(blue);
+  $tab-active-background: $base-background-color;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: silver;
+  $tab-mode: $medium-screen;
+  line-height: 1.5;
+  padding: 0;
+
+  &__header {
+    text-transform: uppercase;
+    @include media($tab-mode) {
+      display: inline;
+    }
+
+    list-style: none;
+    &:after {
+      padding-right: em(10);
+      margin-left: em(5);
+      content: '';
+      height: inherit;
+      border-left: $default-border;
+    }
+
+    &:last-child:after {
+      border: none;
+    }
+  }
+
+  &__link {
+    @include media($tab-mode) {
+      @include inline-block;
+      border-top: 0;
+    }
+
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: palette(blue);
+    display: block;
+    padding: ($base-spacing / 2) 0.5em;
+    text-decoration: none;
+    position: relative;
+
+    &:hover {
+      color: palette(orange);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &__content {
+    @include fadeIn(1s);
+    @include transition(all 0.2s ease-in-out);
+    text-transform: none;
+
+    @include media($tab-mode) {
+      float: left;
+    }
+
+    font-family: $family-open-sans;
+    font-size: $base-font-size + px;
+    display: none;
+    width: 100%;
+  }
+
+  &--content-spaced {
+    @include margin(em(25) 0);
+  }
+
+  &--is-open {
+    display: block !important;
+  }
+
+  &--active {
+    @include transition(all 0.2s ease-in-out);
+    @include media($tab-mode) {
+      border-bottom: $tab-border-active;
+      margin-bottom: -1px;
+    }
+
+    border-bottom: 0;
+    position: relative;
+  }
+}

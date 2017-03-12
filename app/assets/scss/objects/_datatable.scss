@@ -1,0 +1,164 @@
+.datatable {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-data-table-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: palette(gray, dark) !default;
+  $light-gray: lighten(palette(gray),50%) !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $table-border-color: $base-border-color;
+  $table-border: 1px solid $table-border-color;
+  $table-background: lighten($table-border-color, 12%);
+  $table-header-background: lighten($table-background, 10%);
+  $table-hover-background: darken($table-background, 5%);
+  $table-stripe-background: darken($table-background, 2%);
+  $table-stripe-background-hover: darken($table-stripe-background, 5%);
+  $table-padding: em(20) 1em;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: $base-border-radius;
+  border-spacing: 0;
+  width: 100%;;
+  overflow: visible;
+  i {
+    color: palette(blue);
+    font-family: FontAwesome;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: inherit;
+    line-height: 1;
+    &:hover {
+      color: palette(orange);
+    }
+  }
+  font-size: $base-font-size - 3 + px;
+  @include media($xxlarge-up) {
+    font-size: $base-font-size + px;
+  }
+
+  .datatable-scroll {
+    width: auto !important;
+  }
+  &.left-align {
+    .datatable-header {
+      .datatable-header-cell {
+        text-align: left;
+      }
+    }
+    .datatable-body {
+      .datatable-body-cell {
+        text-align: left;
+      }
+    }
+  }
+  .datatable-row-odd {
+    background: palette(gray, lightest);
+  }
+  .datatable-row-group:hover {
+    @include transition( all 0.2s ease-in-out );
+    background-color: $table-hover-background;
+  }
+  .datatable-header {
+    font-weight: 600;
+    font-size: em($base-font-size + 3);
+    border-bottom: 0;
+    text-align: left;
+    color: palette(gray, dark);
+    &:first-child {
+      border-left: none;
+    }
+    .datatable-header-cell {
+      text-align: center;
+      padding: $table-padding;
+      overflow: visible !important;
+      font-size: $base-font-size - 3 + px;
+
+      @include media($xxlarge-up) {
+        font-size: $base-font-size + px;
+      }
+
+      .icon-down:before {
+        font-family: FontAwesome;
+        content: '\f106';
+      }
+      .icon-up:before {
+        font-family: FontAwesome;
+        content: '\f107';
+      }
+    }
+  }
+  .datatable-body {
+    .datatable-body-cell {
+      text-align: center;
+      border-bottom: 0;
+      line-height: $base-data-table-line-height;
+      padding: $table-padding;
+      &.left {
+        text-align: left;
+      }
+    }
+  }
+  .datatable-footer {
+    padding: 5px 0 5px 0;
+    .page-count {
+      padding-left: 10px;
+    }
+    .datatable-pager {
+      .pager {
+        li {
+          &.active {
+            font-weight: 700;
+            background-color: rgba(158, 158, 158, 0.2);
+          }
+          a {
+            color: palette(blue);
+            height: 22px;
+            min-width: 24px;
+            line-height: 22px;
+            padding: 0 6px;
+            border-radius: 3px;
+            margin: 3px 3px;
+            text-align: center;
+            vertical-align: top;
+            text-decoration: none;
+            vertical-align: bottom;
+          }
+          i {
+            font-size: 15px;
+            padding: 0 5px 0 5px;
+          }
+          .icon-prev {
+            &:before {
+              content: '\f100';
+            }
+          }
+          .icon-skip {
+            &:before {
+              content: '\f101';
+            }
+          }
+          .icon-right {
+            &:before {
+              content: '\f105';
+            }
+          }
+          .icon-left {
+            &:before {
+              content: '\f104';
+            }
+          }
+          &.disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

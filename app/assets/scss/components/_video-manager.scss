@@ -1,0 +1,21 @@
+.video-manager {
+  &__play {
+    cursor: pointer;
+  }
+
+  &__build {
+    display: inline-block;
+    margin-right: em(10);
+    button {
+      height: 36px;
+    }
+  }
+
+  &__search {
+    @include media($small-down) {
+      width: 65%;
+    }
+    display: inline-block;
+    width: 75%;
+  }
+}

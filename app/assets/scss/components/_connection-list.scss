@@ -1,0 +1,93 @@
+//Before refactor
+
+// .connection-list-wrapper {
+//   .connection-wrapper {
+//     position: relative;
+//     height: 100px;
+//     .connection {
+//       width: 100%;
+//       padding: 35px 15px 35px 15px;
+//       border-bottom: 1px solid #E0E0E0;
+//       cursor: pointer;
+//       cursor: hand;
+//       position: absolute;
+//       top: 15px;
+//       &.selected {
+//         box-shadow: -3px 3px 3px #b5c7e3;
+//         margin-left: -50px;
+//         background-color: #dae3f1;
+//         width: 300%;
+//       }
+//     }
+//   }
+// }
+
+//Markup
+// <div class="connection-list-wrapper">
+//   <div *ngFor="let connection of connections" class="connection-wrapper">
+//     <div class="connection" [routerLink]="['connections', connection.id]" routerLinkActive="selected">
+//       {{ connection.username }}
+//     </div>
+//   </div>
+
+
+
+//Refactored based on style guide
+//http://cssguidelin.es/
+
+//Block / Scope
+.connections {
+  //Connections Element
+  &__wrapper {
+    @include margin(em(20) 0);
+  }
+
+  //Connections Element
+  &__connection {
+    @include transition(all 0.2s ease-in-out);
+    border-bottom: $default-border;
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__username {
+    @include transition(all 0.2s ease-in-out);
+    @include pointer;
+    @include padding(em(35) em(15));
+    margin-top: em(-5);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__pending {
+    @include margin(em(10) null null em(8));
+    font-family: $base-font-family;
+    font-size: $base-font-size - 4 + px;
+    text-transform: none;
+
+    i {
+      color: palette(blue);
+    }
+  }
+
+  //Connections modifier or variant
+  &--selected {
+    @include margin(null em(-36) null em(-50));
+    box-shadow: em(-3) em(3) em(3) palette(gray, light);
+    background-color: palette(blue, lightest);
+    width: inherit;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+//New Markup
+// <div class="connections">
+//     <div *ngFor="let connection of connections" class="connections__wrapper">
+//         <div class="connections__connection" [routerLink]="['connections', connection.id]" routerLinkActive="connections--selected">
+//             {{ connection.username }}
+//         </div>
+//     </div>

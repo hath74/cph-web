@@ -1,0 +1,32 @@
+.profile {
+  font-size: $base-font-size + 3 + px;
+  @include transition(all 0.2s ease-in-out );
+  &__row {
+    @include padding(em(30) null);
+    border-bottom: $default-border;
+  }
+
+  div.profile__row:last-of-type {
+    border: none;
+  }
+
+  &__col {
+    @include span-columns(6);
+  }
+
+  &__actions {
+    @include padding(em(30) null);
+    text-align: right;
+  }
+
+  &__label {
+    color: palette(blue);
+    font-weight: 600;
+  }
+
+  &--edit {
+    @include fadeIn(1s);
+    @include padding(null em(20));
+    background: palette(gray, lightest);
+  }
+}

@@ -1,0 +1,125 @@
+//  $$$$$$\                        $$\     $$\
+// $$  __$$\                       $$ |    \__|
+// $$ /  \__| $$$$$$\   $$$$$$$\ $$$$$$\   $$\  $$$$$$\  $$$$$$$\
+// \$$$$$$\  $$  __$$\ $$  _____|\_$$  _|  $$ |$$  __$$\ $$  __$$\
+//  \____$$\ $$$$$$$$ |$$ /        $$ |    $$ |$$ /  $$ |$$ |  $$ |
+// $$\   $$ |$$   ____|$$ |        $$ |$$\ $$ |$$ |  $$ |$$ |  $$ |
+// \$$$$$$  |\$$$$$$$\ \$$$$$$$\   \$$$$  |$$ |\$$$$$$  |$$ |  $$ |
+//  \______/  \_______| \_______|   \____/ \__| \______/ \__|  \__|
+
+// ------------------------------------------------------------------
+// TABLE OF CONTENTS
+//
+// 1.0 Global Variables
+// 2.0 Mixins
+// 3.0 Section
+//-------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// 1.0 Global Variables
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// 2.0 Mixins
+// -------------------------------------------------------------------
+%section--reversed {
+  &,
+  .link,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: palette(white);
+  }
+
+  .link {
+    &:hover {
+      color: palette(orange);
+    }
+  }
+}
+
+// -------------------------------------------------------------------
+// 3.0 Section
+// -------------------------------------------------------------------
+
+.section {
+  @include clearfix;
+  @include pad(em($section-padding) 0 );
+  @include fadeIn(1s);
+  position: relative;
+
+  header {
+    margin-bottom: $base-spacing-unit;
+  }
+
+  h1,
+  h2,
+  h3 {
+    // margin-bottom: $half-spacing-unit / 2;
+    margin-bottom: em(15);
+  }
+
+  &__image-cta {
+    position: relative;
+    display: inline-block;
+    img {
+      border: $default-border;
+    }
+  }
+
+  &__image-cta-content {
+    @include vertical-align(50%, -50%);
+    position: absolute;
+    right: 10%;
+    text-align: left;
+    h2 {
+      color: palette(blue, bright);
+      font-size: em($base-font-size +7);
+      font-weight: 300;
+    }
+  }
+
+  &--image-cta-content-white {
+    h2 {
+      color: palette(white);
+    }
+  }
+
+  // White
+  &--white {
+    background-color: palette(white);
+  }
+
+  // Light Gray
+  &--gray-light {
+    background-color: palette(gray, lightest);
+  }
+
+  // Light Blue
+  &--blue-light {
+    background-color: palette(blue, lightest);
+  }
+
+  // Medium Blue
+  &--blue-medium {
+    @extend %section--reversed;
+    background-color: palette(blue, light);
+  }
+
+  // Dark Blue
+  &--blue-dark {
+    @extend %section--reversed;
+    background-color: palette(blue, dark);
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &__description {
+    @include transform(translateY(-20px));
+    margin-bottom: em(20);
+  }
+}

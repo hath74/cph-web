@@ -1,0 +1,71 @@
+.qsl-assessment {
+  $assessment-gray: lighten(palette(gray), 15%);
+  color: $assessment-gray;
+
+  &__title {
+    @include margin(em(35) null em(25) null);
+    color: palette(blue, light);
+    font-size: $base-font-size + 4 + px;
+    font-weight: 600;
+  }
+
+  &__intro {
+    @include margin(em(25) null);
+  }
+
+  &__actions {
+    @include margin(em(15));
+    button {
+      @include margin(null em(10));
+    }
+  }
+
+  &__radio-group {
+    margin-left: 20%;
+    label {
+      color: $assessment-gray;
+    }
+  }
+
+  &__results-title {
+    margin-bottom: em(30);
+  }
+
+  &__results-subtitle {
+    font-size: $base-font-size + 2 + px;
+    color: palette(blue);
+  }
+
+  &__results-image {
+    @include span-columns(4);
+    img {
+      width: 100%;
+    }
+  }
+
+  &__results-text {
+    @include span-columns(8);
+    text-align: left;
+    padding-left: em(15);
+  }
+
+  &__recommendation {
+    @include padding(em(15) em(25) null em(25));
+    text-align: left;
+  }
+
+  &__begin {
+    text-align: right;
+    @include margin(em(20) null);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .modal {
+    .modal-fade-screen {
+      text-align: center;
+    }
+  }
+}

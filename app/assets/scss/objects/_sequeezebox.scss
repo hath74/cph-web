@@ -1,0 +1,70 @@
+.squeezebox {
+  $pad: 15;
+  $fontSmall: 15;
+  $fontLarge: 22;
+  $border: 1px solid palette(blue, lightest);
+  $arrowColor: palette(blue, lighter);
+  $arrowSize: 50;
+  $textHoverColor: palette(blue, slateLight);
+  margin-top: 10px;
+  font-family: $family-open-sans;
+  font-size: $base-font-size + px;
+  sb-item {
+    &:first-child {
+      .sb-item {
+        border-top: $default-border;
+      }
+    }
+  }
+  .sb-item {
+    overflow: hidden;
+    padding: em(15) em(20);
+    border-bottom: $default-border;
+    &.is-collapsed {
+      background-color: palette(gray, lightest);
+      .sb-item-head {
+        a {
+          .toggle-icon {
+            transform: rotate(0);
+          }
+        }
+      }
+    }
+    .sb-item-head {
+      font-size: $fontLarge + px;
+      text-transform: none;
+      a {
+        color: palette(gray, dark);
+        text-decoration: none;
+        display: block;
+        .toggle-icon {
+          display: block;
+          float: right;
+          height: 16px;
+          position: relative;
+          transform: rotate(90deg);
+          transition: 0.3s transform;
+          width: 16px;
+          &:after {
+            top: 3px;
+            color: lighten(palette(gray), 20%);
+            content: '\2023';
+            position: absolute;
+            display: inline-block;
+            font-size: $arrowSize + px;
+            margin-top: -$arrowSize / 2 + px;
+            margin-right: 10 px;
+          }
+        }
+      }
+    }
+    .sb-item-body {
+      height: 0;
+      overflow: hidden;
+      transition: 0.5s height;
+      .inner {
+        padding: 0 0 10px 10px;
+      }
+    }
+  }
+}

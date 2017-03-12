@@ -1,0 +1,134 @@
+// $$$$$$\
+// \_$$  _|
+//   $$ |  $$$$$$$\  $$$$$$\  $$$$$$$\   $$$$$$$\
+//   $$ | $$  _____|$$  __$$\ $$  __$$\ $$  _____|
+//   $$ | $$ /      $$ /  $$ |$$ |  $$ |\$$$$$$\
+//   $$ | $$ |      $$ |  $$ |$$ |  $$ | \____$$\
+// $$$$$$\\$$$$$$$\ \$$$$$$  |$$ |  $$ |$$$$$$$  |
+// \______|\_______| \______/ \__|  \__|\_______/
+
+// ------------------------------------------------------------------
+// TABLE OF CONTENTS
+//
+// 1.0 Global Variables
+// 2.0 Icon
+// 3.0 Icon Block
+//-------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// 1.0 Global Variables
+// -------------------------------------------------------------------
+
+$icon-size: 96;
+$icons: template,
+	compass,
+	tools,
+;
+
+// -------------------------------------------------------------------
+// 2.0 Icon
+// -------------------------------------------------------------------
+
+.icon {
+  &--gold {
+    @include svg-bg(icons-96x96-circle-gold, 0, 0);
+    display: block;
+    height: $icon-size + px;
+    width: $icon-size + px;
+  }
+
+  @for $i from 1 through length($icons) {
+    $icon: nth($icons, $i);
+    $position: -($icon-size * $i - $icon-size);
+
+    &--#{$icon} {
+      background-position: 0 $position+px;
+    }
+  }
+
+  &--gemiini-badge {
+    $size: 23;
+    @include img-replacement($size+px, $size+px);
+    background-image: url('#{$bg-img-path}icon-gemiini-badge.png');
+  }
+
+  &--inline {
+    display: inline-block;
+    margin-right: em(5);
+    vertical-align: middle;
+  }
+}
+
+// -------------------------------------------------------------------
+// 3.0 Icon Block
+// -------------------------------------------------------------------
+
+
+.icon-block {
+  text-align: center;
+
+  &__icon {
+    margin: 0 auto $base-spacing-unit auto;
+  }
+
+  &__subhead {
+    font-size: $base-font-size - 3 + px;
+    color: $default-body-color;
+    font-weight: 300;
+  }
+
+  &--icon-inline {
+    @include margin(0 em(25) 0 0);
+    float: left;
+  }
+
+  &--content-inline {
+    text-align: left;
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &--underlined {
+    @include padding(em(45) null);
+    border-bottom: $default-border;
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &--clickable {
+    @include pointer;
+    @include transition(margin 0.2s ease-in-out);
+    &:hover {
+      margin-left: -10px;
+      opacity: 0.5;
+    }
+  }
+
+  // Preferred element, h3
+  h2,
+  h3,
+  h4 {
+    font:  {
+      weight: 700;
+    }
+  }
+}
+
+// -------------------------------------------------------------------
+// 4.0 Icon Blocks
+// -------------------------------------------------------------------
+
+.icon-blocks {
+  @include outer-container;
+
+  .icon-block {
+    margin: $base-spacing-unit 0;
+  }
+}

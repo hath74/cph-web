@@ -1,0 +1,48 @@
+//Flippy overrides
+.gem-flippy {
+  &.wrapper {
+    display: inline-block;
+  }
+  &.fancy {
+    float: none !important;
+  }
+  .graded {
+    position: absolute;
+    background: palette(white);
+    bottom: 10px;
+    left: 10px;
+    border: 3px solid palette(white);
+    padding: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+  }
+  .example {
+    margin-right: 10px;
+    width: 63px;
+    height: 40px;
+  }
+  .grade {
+    width: 40px;
+    height: 40px;
+  }
+}
+.matches {
+  img {
+    width: 250px;
+    height: 150px;
+  }
+  .gem-flippy.fancy {
+    width: 250px !important;
+    height: 150px !important;
+  }
+}
+.choices {
+  margin-top: em(60);
+  img {
+    width: 180px;
+    height: 100px;
+  }
+  .gem-flippy.fancy {
+    width: 180px !important;
+    height: 100px !important;
+  }
+}

@@ -1,0 +1,26 @@
+.not-found {
+  p {
+    font-size: $base-font-size + 6 + px;
+    margin-bottom: em(15);
+  }
+
+  h1,
+  h2 {
+    font-family: $family-trajan-pro;
+    font-weight: 200;
+  }
+
+  h1 {
+    font-size: 65px;
+    margin: 0;
+    display: inline-block;
+    span {
+      font-size: 45px;
+    }
+  }
+
+  img {
+    display: inline-block;
+    margin-bottom: -50px;
+  }
+}

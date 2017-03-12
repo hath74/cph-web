@@ -1,0 +1,72 @@
+.btn-group-object {
+  @include clearfix;
+  padding-bottom: em($section-padding);
+  margin-bottom: em($section-padding);
+  border-bottom: $default-border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__actions {
+    padding-top: em(20);
+
+    button {
+      margin-right: em(3);
+    }
+
+    @include media($xlarge-up) {
+      @include span-columns(5);
+      padding-top: 0;
+      text-align: right;
+    }
+  }
+
+  &__content {
+    @include media($xlarge-up) {
+      @include span-columns(7);
+    }
+  }
+
+  &__heading {
+    color: palette(gray, dark);
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  &__subhead {
+    display: block;
+    color: palette(blue, bright);
+    font-weight: 200;
+    font-size: $base-font-size + px;
+  }
+
+  &--subhead-spaced {
+    margin-bottom: em(20);
+  }
+
+  &--content-full-width {
+    button {
+      @include margin(em(40) em(10) null null);
+    }
+  }
+
+  &--content-full-width-basic {
+    button {
+      @include margin(null em(10) null null);
+    }
+  }
+
+  &--single {
+    border-bottom: none;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--stand-alone {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

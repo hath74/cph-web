@@ -1,0 +1,269 @@
+.button {
+  @include transition(all 0.2s ease-in-out);
+  border: 0;
+  border-radius: 2px;
+  display: inline-block;
+  font:  {
+    family: $family-open-sans;
+    weight: 600;
+  }
+  line-height: 1;
+  max-width: 100%;
+  padding: em(8) em(18);
+  position: relative;
+  text:  {
+    align: center;
+    decoration: none;
+  }
+
+  // Default
+  &--default {
+    background-color: palette(white);
+    border: $default-border;
+    border-bottom: 0;
+    box-shadow: 0 2px 0 0 palette(gray, light);
+    color: lighten( palette(blue, slateLight), 15);
+
+    &:hover {
+      color: palette(blue, slateLight);
+    }
+
+    &:active {
+      box-shadow: 0 1px 0 0 palette(gray, light),
+      0 -1px 0 0 palette(gray, light);
+    }
+  }
+
+  // Primary
+  &--primary {
+    background-color: palette(orange);
+    box-shadow: inset 0 -1px 0 0 darken(palette(orange), 5),
+    0 1px 0 0 darken(palette(orange), 5);
+    color: palette(white);
+
+    &:hover {
+      background-color: lighten(palette(orange), 5);
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 0 0 palette(orange),
+      0 1px 0 0 palette(orange),
+      inset 0 1px 0 0 darken(palette(orange), 5),
+      0 -1px 0 0 darken(palette(orange), 5);
+    }
+  }
+
+  // Secondary
+  &--secondary {
+    background-color: palette(blue, bright);
+    box-shadow: inset 0 -1px 0 0 darken(palette(blue, bright), 10),
+    0 1px 0 0 darken(palette(blue, bright), 10);
+    color: palette(white);
+
+    &:hover {
+      background-color: lighten(palette(blue, bright), 5);
+      color: palette(white);
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 0 0 palette(blue, bright),
+      0 1px 0 0 palette(blue, bright),
+      inset 0 1px 0 0 darken(palette(blue, bright), 10),
+      0 -1px 0 0 darken(palette(blue, bright), 10);
+    }
+  }
+
+  //Caution
+  &--caution {
+    background-color: palette(red, bright);
+    box-shadow: inset 0 -1px 0 0 darken(palette(red, bright), 10),
+    0 1px 0 0 darken(palette(red, bright), 10);
+    color: palette(white);
+
+    &:hover {
+      background-color: lighten(palette(red, bright), 5);
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 0 0 palette(red, bright),
+      0 1px 0 0 palette(red, bright),
+      inset 0 1px 0 0 darken(palette(red, bright), 10),
+      0 -1px 0 0 darken(palette(red, bright), 10);
+    }
+  }
+
+  &--go {
+    background-color: palette(green, base);
+    box-shadow: inset 0 -1px 0 0 darken(palette(green, base), 10),
+    0 1px 0 0 darken(palette(green, base), 10);
+    color: palette(white);
+
+    &:hover {
+      background-color: lighten(palette(green, base), 5);
+    }
+
+    &:active {
+      box-shadow: inset 0 -1px 0 0 palette(green, base),
+      0 1px 0 0 palette(green, base),
+      inset 0 1px 0 0 darken(palette(green, base), 10),
+      0 -1px 0 0 darken(palette(green, base), 10);
+    }
+  }
+
+  // Right Arrow
+  &--arrow-right {
+    &:after {
+      @include fa-icon();
+      color: inherit;
+      content: '\f178';
+      margin-left: em(6);
+      opacity: 0.5;
+      vertical-align: middle;
+    }
+    &:hover {
+      &:after {
+        @include transition(all 0.2s ease-in-out);
+        color: inherit;
+        opacity: 1.0;
+      }
+    }
+    &--down {
+      &:after {
+        content: '\f175';
+        color: lighten( palette(white), 5);
+      }
+      &:hover {
+        &:after {
+          @include transition(all 0.2s ease-in-out);
+          color: #fecf80;
+        }
+      }
+    }
+    &--alt {
+      &:after {
+        color: lighten( palette(blue, slateLight), 15);
+      }
+      &:hover {
+        &:after {
+          @include transition(all 0.2s ease-in-out);
+          color: #fecf80;
+        }
+      }
+    }
+  }
+
+  // Arrow Left
+  &--arrow-left {
+    &:before {
+      @include fa-icon();
+      color: inherit;
+      content: '\f177';
+      margin-right: em(6);
+    }
+    &:hover {
+      &:after {
+        @include transition(all 0.2s ease-in-out);
+        color: inherit;
+      }
+    }
+    &--alt {
+      &:before {
+        color: lighten( palette(blue, slateLight), 15);
+      }
+      &:hover {
+        &:before {
+          @include transition(all 0.2s ease-in-out);
+          color: #fecf80;
+        }
+      }
+    }
+  }
+
+  // Arrow Down
+  &--arrow-down {
+    &:before {
+      @include fa-icon();
+      content: '\f019';
+      margin-right: em(6);
+    }
+    &:hover {
+      &:after {
+        @include transition(all 0.2s ease-in-out);
+      }
+    }
+  }
+
+  // Add left
+  &--add-left {
+    &:before {
+      @include fa-icon();
+      content: '\f067';
+      margin-right: em(6);
+    }
+  }
+
+  // Close
+  &--close {
+    @include pad(em(2) em(5));
+    background-color: transparent;
+    color: inherit;
+    opacity: 0.6;
+    font-size: em($base-font-size + 10);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  //Align right 
+  &--align-right {
+    float: right;
+  }
+
+  // Small
+  &--small {
+    font-size: em($base-font-size - 5);
+  }
+
+  // Large
+  &--large {
+    font-size: em($base-font-size + 5);
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--inline-form {
+    line-height: 1.5;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+  }
+}
+
+.button-back {
+  @include pointer;
+  @include transition(all 0.2s ease-in-out);
+  @include padding(em(20) 0);
+  color: palette(blue, bright);
+  border-bottom: $default-border;
+  &:hover {
+    background: palette(gray, lightest);
+    margin-left: -10px;
+    color: palette(orange);
+  }
+}
+
+.button-back--inner {
+  @include pointer;
+  @include transition(all 0.2s ease-in-out);
+  @include padding(em(20) 0);
+  margin-bottom: em(20);
+  color: palette(blue, bright);
+  &:hover {
+    margin-left: -10px;
+    color: palette(orange);
+  }
+}

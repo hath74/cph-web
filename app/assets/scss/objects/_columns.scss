@@ -1,0 +1,175 @@
+// Columns
+.column {
+  // Wrapper
+  &__wrapper {
+    @include outer-container;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper-spaced {
+    @include outer-container;
+    margin-bottom: em($base-line-height * 2);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // 1 of 4
+  &--1of4 {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-only) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($xlarge-up) {
+      @include span-columns(3);
+    }
+  }
+
+  // 1 of 4 spaced
+  &--1of4-spaced {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($to-xlarge) {
+      margin-bottom: em($section-padding);
+    }
+
+    @include media($large-only) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media($xlarge-up) {
+      @include span-columns(3);
+    }
+  }
+
+  // 1 of 3
+  &--1of3 {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(4);
+    }
+  }
+
+  // 1 of 3 spaced
+  &--1of3-spaced {
+    @include media($to-large) {
+      margin-bottom: em($section-padding);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(4);
+    }
+  }
+
+  // 2 of 3
+  &--2of3 {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(8);
+    }
+  }
+
+  // 2 of 3 spaced
+  &--2of3-spaced {
+    @include media($to-large) {
+      margin-bottom: em($section-padding);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(8);
+    }
+  }
+
+  // 1 of 2
+  &--1of2 {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(6);
+    }
+  }
+
+  // 1 of 2 xl
+  &--1of2-xl {
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($xlarge-up) {
+      @include span-columns(6);
+    }
+  }
+
+  // 1 of 2 spaced
+  &--1of2-spaced {
+    @include media($to-large) {
+      margin-bottom: em($section-padding);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      @include span-columns(6);
+    }
+  }
+
+  &--pad-right {
+    padding-right: em(30);
+  }
+
+  &--breakpoint-spacing {
+    margin-bottom: em(10);
+
+    @include media($to-large) {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media($large-up) {
+      margin-bottom: 0;
+    }
+  }
+}

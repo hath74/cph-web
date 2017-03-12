@@ -1,0 +1,175 @@
+//  $$$$$$$\             $$$$$$\                     $$\   $$\
+//  $$  __$$\           $$  __$$\                    $$ |  $$ |
+//  $$ |  $$ | $$$$$$\  $$ /  \__|$$$$$$\  $$\   $$\ $$ |$$$$$$\    $$$$$$$\
+//  $$ |  $$ |$$  __$$\ $$$$\     \____$$\ $$ |  $$ |$$ |\_$$  _|  $$  _____|
+//  $$ |  $$ |$$$$$$$$ |$$  _|    $$$$$$$ |$$ |  $$ |$$ |  $$ |    \$$$$$$\
+//  $$ |  $$ |$$   ____|$$ |     $$  __$$ |$$ |  $$ |$$ |  $$ |$$\  \____$$\
+//  $$$$$$$  |\$$$$$$$\ $$ |     \$$$$$$$ |\$$$$$$  |$$ |  \$$$$  |$$$$$$$  |
+//  \_______/  \_______|\__|      \_______| \______/ \__|   \____/ \_______/
+//
+//
+//
+// ---------------------------------------------------------------------------------
+// Debug Mode
+// ---------------------------------------------------------------------------------
+$debug-mode: false !default;
+// ---------------------------------------------------------------------------------
+// BG Image Path
+// ---------------------------------------------------------------------------------
+$bg-img-path: 'assets/images/';
+// ---------------------------------------------------------------------------------
+// Font Path
+// ---------------------------------------------------------------------------------
+$fonts-path: 'fonts/';
+// ---------------------------------------------------------------------------------
+// Colors
+// ---------------------------------------------------------------------------------
+
+
+// http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+$palettes: (
+	black: (
+		base:       #000000,
+	),
+	blue: (
+		powder:     #d9e2ee,
+		teal:       #1178ab,
+		bright:     #1b79a9,
+		slateLight: #65758d,
+		lightest:   #d9e2ee,
+		lighter:    #889bb4,
+		light:      #235c79,
+		base:       #173e7a,
+		dark:       #1c4e67,
+		darker:     #072450,
+		darkest:    #252f3f,
+		slateDark:  #39475c,
+	),
+	gold: (
+		base:       #ecaf45,
+	),
+	gray: (
+		lightest:   #f7f9fc,
+		light:      #ced6e6,
+        medium:     #cccccc,
+		base:       #505865,
+		dark:       #363636,
+	),
+	orange: (
+		base:       #fc9f00,
+	),
+	red: (
+		base:       #de2828,
+    bright:     #e50000,
+	),
+	yellow: (
+		base:       #f6e81a,
+	),
+	green: (
+		base:       #4fd52d,
+	),
+	white: (
+		base:       #ffffff,
+	),
+);
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+$default-body-color: palette(gray, dark);
+$default-link-color: palette(blue, bright);
+$default-link-color-hover: palette(orange);
+
+// ---------------------------------------------------------------------------------
+// Sizing
+// ---------------------------------------------------------------------------------
+$base-font-size: 16;
+$base-line-height: 26;
+$base-spacing-unit: em($base-line-height);
+$half-spacing-unit: $base-spacing-unit / 2;
+$line-height-ratio: $base-line-height / $base-font-size;
+// ---------------------------------------------------------------------------------
+// Type
+// ---------------------------------------------------------------------------------
+$family-open-sans: 'open-sans',
+'Helvetica Neue',
+Arial,
+Helvetica,
+sans-serif;
+$family-trajan-pro: 'trajan-pro-3',
+Georgia,
+'Times New Roman',
+Times,
+serif;
+$base-font-family: $family-open-sans;
+$header-font-family: $family-open-sans;
+$header-font-weight: 600;
+$font-family-fa: normal normal normal 14px/1 FontAwesome;
+// ---------------------------------------------------------------------------------
+// Breakpoints
+// ---------------------------------------------------------------------------------
+$landscape: new-breakpoint(orientation landscape);
+$portrait: new-breakpoint(orientation portrait);
+$small-up: new-breakpoint(min-width 0px);
+$small-only: new-breakpoint(max-width 479px);
+$small-down: new-breakpoint(max-width 768px);
+$medium-up: new-breakpoint(min-width 480px);
+$medium-only: new-breakpoint(min-width 480px max-width 767px);
+$to-large: new-breakpoint(max-width 767px);
+$large-up: new-breakpoint(min-width 768px);
+$large-only: new-breakpoint(min-width 768px max-width 1023px);
+$to-xlarge: new-breakpoint(max-width 1023px);
+$xlarge-down: new-breakpoint(max-width 1024px);
+$xxlarge-up: new-breakpoint(min-width 1044px);
+$xxlarge-only: new-breakpoint(min-width 1044px max-width 1199px);
+$xlarge-up: new-breakpoint(min-width 1024px);
+$xlarge-only: new-breakpoint(min-width 1024px max-width 1199px);
+$to-xxlarge: new-breakpoint(max-width 1199px);
+$xxlarge-up: new-breakpoint(min-width 1200px);
+$utility-nav: new-breakpoint(min-width 1290px);
+// ---------------------------------------------------------------------------------
+// Nav Breakpoints
+// ---------------------------------------------------------------------------------
+$mobile: new-breakpoint(max-width 767px);
+// ---------------------------------------------------------------------------------
+// Visibility
+// ---------------------------------------------------------------------------------
+$sizes: (
+	'small-up'   : $small-up,
+	'small-only' : $small-only,
+	'small-down' : $small-down,
+	'medium-up'  : $medium-up,
+	'medium-only': $medium-only,
+	'to-large'   : $to-large,
+	'large-up'   : $large-up,
+	'large-only' : $large-only,
+	'to-xlarge'  : $to-xlarge,
+	'xlarge-up'  : $xlarge-up,
+	'xlarge-only': $xlarge-only,
+	'to-xxlarge' : $to-xxlarge,
+	'xxlarge-up' : $xxlarge-up,
+	'uitlity-nav' : $utility-nav,
+);
+
+@each $size, $query in $sizes {
+  .show-#{$size} {
+    display: none !important;
+    @include media($query) {
+      display: inherit !important;
+    }
+  }
+}
+
+// -------------------------------------------------------------------
+// Section Padding
+// -------------------------------------------------------------------
+$section-padding: 60;
+// ---------------------------------------------------------------------------------
+// Transitions
+// ---------------------------------------------------------------------------------
+$default-transition: all 0.2s ease-in-out;
+// ---------------------------------------------------------------------------------
+// Border
+// ---------------------------------------------------------------------------------
+$default-border: 1px solid palette(gray, light);

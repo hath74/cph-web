@@ -1,0 +1,61 @@
+ .testing {
+  &--flex {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+  }
+
+  &__item {
+    @include transition(all 0.2s ease-in-out);
+    @include pointer;
+    margin: em(20);
+    padding: em(15);
+    border: $default-border;
+    float: left;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &:hover {
+      border-color: palette(orange);
+      border-width: 3px;
+      opacity: 0.7;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &--expressive-item {
+    @include pointer;
+    @include transition(all 0.2s ease-in-out);
+    width: 576px;
+    height: auto;
+    border: $default-border;
+    padding: em(20);
+    margin-bottom: em(25);
+    &:hover {
+      border-color: palette(orange);
+      border-width: 3px;
+      opacity: 0.7;
+    }
+  }
+
+  &--show-hint {
+    @include transition(all 0.2s ease-in-out);
+    background: palette(orange);
+    animation: shake 0.82s cubic-bezier(0.36,0.07,0.19,0.97) both !important;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  &--correct {
+    position: absolute;
+    z-index: 99999;
+    top: 30%;
+    width: 100%;
+  }
+}

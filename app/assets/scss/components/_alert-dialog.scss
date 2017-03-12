@@ -1,0 +1,9 @@
+.alert-dialog {
+  &__button-group {
+    margin-top: em(15);
+    text-align: center;
+    button {
+      @include margin(null em(8));
+    }
+  }
+}

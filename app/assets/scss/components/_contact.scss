@@ -1,0 +1,5 @@
+.contact {
+  @include media($xxlarge-up) {
+    @include padding(null em(200));
+  }
+}

@@ -1,0 +1,106 @@
+.pagination {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: palette(gray, dark) !default;
+  $large-screen: em(860) !default;
+  $base-font-color: $dark-gray !default;
+  $pagination-border-color: $base-border-color;
+  $pagination-border: 1px solid $pagination-border-color;
+  $pagination-background: lighten($pagination-border-color, 10);
+  $pagination-hover-background: lighten($pagination-background, 5);
+  $pagination-color: palette(blue);
+  text-align: center;
+
+  ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline;
+      list-style: none;
+      @include margin(0 5px 0 0);
+      &.current {
+        background: palette(blue, slateLight) !important;
+      }
+    }
+
+    ul li {
+      display: none;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: inline;
+      }
+
+
+      @include media($large-screen) {
+        display: inline;
+      }
+    }
+
+    li a {
+      @include transition(all 0.2s ease-in-out);
+
+      @include pointer;
+      background: palette(white);
+      border-radius: $base-border-radius;
+      border: $pagination-border;
+      color: $pagination-color;
+      outline: none;
+      padding: ($base-spacing / 4) ($base-spacing / 2);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background: $pagination-hover-background;
+        color: $action-color;
+      }
+
+      &:active {
+        background: $pagination-background;
+      }
+      &.disabled {
+        color: $action-color;
+      }
+    }
+
+    li.active a {
+      background: palette(blue, slateLight);
+      color: palette(white);
+    }
+  }
+  &.pagination--direction-only {
+    li a {
+      @include transition(all 0.2s ease-in-out);
+
+      @include pointer;
+      background: palette(blue, slateDark);
+      border-radius: $base-border-radius;
+      border: none;
+      color: palette(orange);
+      outline: none;
+      padding: ($base-spacing / 4) ($base-spacing / 2);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background: palette(blue, slateLight);;
+        color: palette(orange);
+      }
+
+      &:active {
+        background: $pagination-background;
+      }
+      &.disabled {
+        cursor: disabled;
+        color: palette(orange);
+        opacity: 0.5;
+      }
+    }
+  }
+}

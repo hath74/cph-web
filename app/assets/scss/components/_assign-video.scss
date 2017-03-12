@@ -1,0 +1,14 @@
+.assign-video {
+  &__repetition-info {
+    @include span-columns(8);
+    @include media($xlarge-up) {
+      @include span-columns(9);
+    }
+  }
+  &__repetition-input {
+    @include span-columns(4);
+    @include media($xlarge-up) {
+      @include span-columns(3);
+    }
+  }
+}

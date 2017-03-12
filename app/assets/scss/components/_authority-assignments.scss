@@ -1,0 +1,17 @@
+.authority-assignments {
+  margin-bottom: em(20);
+
+  &__sort-col-1 {
+    @include media($xlarge-up) {
+      @include span-columns(4);
+      @include shift(4);
+      margin-bottom: 0;
+    }
+  }
+
+  &__sort-col-2 {
+    @include media($xlarge-up) {
+      @include span-columns(4);
+    }
+  }
+}

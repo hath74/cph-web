@@ -1,0 +1,61 @@
+//  $$$$$$\                      $$\           $$\
+// $$  __$$\                     \__|          $$ |
+// $$ /  \__| $$$$$$\   $$$$$$$\ $$\  $$$$$$\  $$ |
+// \$$$$$$\  $$  __$$\ $$  _____|$$ | \____$$\ $$ |
+//  \____$$\ $$ /  $$ |$$ /      $$ | $$$$$$$ |$$ |
+// $$\   $$ |$$ |  $$ |$$ |      $$ |$$  __$$ |$$ |
+// \$$$$$$  |\$$$$$$  |\$$$$$$$\ $$ |\$$$$$$$ |$$ |
+//  \______/  \______/  \_______|\__| \_______|\__|
+
+// ------------------------------------------------------------------
+// TABLE OF CONTENTS
+//
+// 1.0 Global Variables
+// 2.0 Social Links
+//-------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// 1.0 Global Variables
+// -------------------------------------------------------------------
+$size-lg: 44;
+$size-sm: 28;
+$icons: ( facebook, icon-social-footer-facebook ),
+( twitter, icon-social-footer-twitter )
+// ( google, icon-social-footer-google ),
+// ( linkedin, icon-social-footer-linkedin ),
+// ( youtube, icon-social-footer-youtube )
+;
+
+// -------------------------------------------------------------------
+// 2.0 Social Links
+// -------------------------------------------------------------------
+
+.social-links {
+  line-height: 1;
+
+  li {
+    margin: 0 em(4);
+
+    a {
+      @include img-replacement($size-lg+px, $size-lg+px);
+      display: block;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @include media($medium-up) {
+        background-size: contain;
+        height: $size-sm+px;
+        width: $size-sm+px;
+      }
+    }
+  }
+
+  @each $icon, $file in $icons {
+    &--#{$icon} a {
+      @include svg-bg($file, center, center);
+    }
+  }
+}

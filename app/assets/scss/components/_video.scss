@@ -1,0 +1,36 @@
+.video {
+  @include margin(null em(30));
+
+  &__guided {
+    padding-top: em(30);
+    border-bottom: $default-border;
+  }
+
+  &__clips {
+    td:nth-child(-n+3) {
+      cursor: move;
+    }
+  }
+
+  &__actions {
+    text-align: right;
+  }
+
+  &__icon {
+    color: lighten( palette(blue, slateLight), 15);
+  }
+
+  &__time {
+    @include padding(em(20) null);
+    font-size: $base-font-size + 2 + px;
+    text-align: right;
+  }
+
+  &__titles {
+    text-transform: capitalize;
+  }
+
+  &--guided-search {
+    @include margin(null em(-30));
+  }
+}

@@ -1,0 +1,41 @@
+.assignment-details {
+  font-size: $base-font-size;
+  text-transform: none;
+  padding: em(15);
+  &:nth-child(even) {
+    background-color: palette(gray, lightest);
+  }
+
+  &__row {
+    margin-bottom: em(20);
+  }
+
+  &__item {
+    margin-right: em(15);
+  }
+
+  &__heading {
+    font-weight: 700;
+  }
+
+  &--state-not-started {
+    color: palette(red);
+  }
+
+  &--state-started {
+    color: palette(yellow);
+  }
+
+  &--state-completed {
+    color: palette(green);
+  }
+
+  &--item-right {
+    @include media($small-down) {
+      float: none;
+      display: block;
+      margin-top: em(10);
+    }
+    float: right;
+  }
+}
