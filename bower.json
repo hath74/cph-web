@@ -2,7 +2,7 @@
     "name": "cph",
     "version": "0.0.0",
     "dependencies": {
-        "jquery": "^1.11.3",
+        "jquery": "^3.1.1",
         "underscore": "^1.8.3",
         "moment": "^2.15.1"
     },

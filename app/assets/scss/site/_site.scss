@@ -516,3 +516,7 @@ hr {
     @include margin(em(20) null);
   }
 }
+
+.fixed-navigation {
+    padding-top: em(130);
+  }

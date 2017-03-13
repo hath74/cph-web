@@ -22,9 +22,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      '../bower_components/jquery/dist/jquery.js',
-      '../bower_components/underscore/underscore.js',
-      '../bower_components/moment/moment.js',
+      '../app/bower_components/jquery/dist/jquery.js',
+      '../app/bower_components/underscore/underscore.js',
+      '../app/bower_components/moment/moment.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
