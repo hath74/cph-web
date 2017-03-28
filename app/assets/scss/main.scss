@@ -4,7 +4,7 @@
 @import 'normalize/normalize';
 
 //Font Awesome
-$fa-font-path: 'font-awesome/fonts/';
+$fa-font-path: '/assets/scss/font-awesome/fonts/';
 @import 'font-awesome/scss/font-awesome';
 
 //Bourbon Neat Bitters
@@ -61,6 +61,7 @@ $fa-font-path: 'font-awesome/fonts/';
 @import 'objects/btn-group-object';
 @import 'objects/error';
 @import 'objects/switch';
+@import 'objects/map';
 
 //site wide
 @import 'site/site';

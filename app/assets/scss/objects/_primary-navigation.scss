@@ -19,7 +19,7 @@ header.navigation {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $navigation-background;
+  background-color: palette(black, medium);
   border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
@@ -36,10 +36,12 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
+     margin-top: -10px;
 
     img {
-      max-height: $navigation-height;
+      max-height: 80px;
       padding: 0.8em 0;
+     
     }
   }
 
@@ -73,7 +75,8 @@ header.navigation {
     z-index: 9999999;
 
     @include media ($horizontal-bar-mode) {
-      float: left;
+      float: right;
+      
     }
   }
 
@@ -100,6 +103,7 @@ header.navigation {
   // The nav items
 
   ul li.nav-link {
+    position:relative;
     background: $navigation-background;
     display: block;
     line-height: $navigation-height;
@@ -115,6 +119,10 @@ header.navigation {
       line-height: $navigation-height;
       text-decoration: none;
       width: auto;
+      i {
+    position: absolute;
+    top: -8px;
+    }
     }
 
     a {

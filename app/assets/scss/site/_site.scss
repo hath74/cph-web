@@ -26,7 +26,7 @@ body {
   overflow-x: hidden;
   min-height: 100%;
   position: relative;
-  padding-bottom: 250px;
+  padding-bottom: 150px;
 
   &.-no-scroll {
     overflow: hidden;
@@ -237,10 +237,12 @@ a {
   left: 0;
   right: 0;
   z-index: 9999;
-  min-height: 250px;
-  background: palette(blue, slateDark);
+  min-height: 50px;
+  text-align: center;
+  background: palette(black, medium);
+  border-bottom: 8px solid #000;
   @include media($xlarge-up) {
-    min-height: 150px;
+    min-height: 50px;
   }
   &__block {
     @include media($to-xlarge) {
@@ -518,5 +520,5 @@ hr {
 }
 
 .fixed-navigation {
-    padding-top: em(130);
+    padding-top: em(150);
   }
