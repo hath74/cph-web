@@ -294,15 +294,19 @@ $placeholder-color: palette(blue, lighter);
   padding: 4px;
   position: absolute;
   z-index: 0;
-  bottom: -19px;
+  bottom: -22px;
   font-size: em($base-font-size - 2);
   color: darken(palette(red),17%);
-  background-color: #fbe3e4;
+ // background-color: #fbe3e4;
   text-align: left;
 
   &--checkbox {
     background-color: inherit;
     bottom: -15px;
     left: 25px;
+  }
+
+   &--textarea {
+    bottom: -15px;
   }
 }

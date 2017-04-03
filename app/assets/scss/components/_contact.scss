@@ -1,5 +1,16 @@
 .contact {
-  @include media($xxlarge-up) {
-    @include padding(null em(200));
+
+  &__col {
+    @include media($large-up) {
+    @include span-columns(6);
+  }
+  }
+
+  &__details {
+    margin-bottom: em(20);
+    h3 {
+      padding:0;
+      margin:0;
+    }
   }
 }

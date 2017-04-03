@@ -30,7 +30,7 @@ form {
 
   &--spaced {
     @include pad( em($line-height-ratio / 2) 0);
-    margin-bottom: em(20);
+    margin-bottom: em(30);
   }
 
   &--align-right {

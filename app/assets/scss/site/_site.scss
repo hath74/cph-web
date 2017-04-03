@@ -364,7 +364,7 @@ a {
 h2 {
   font-family: $family-open-sans;
   font-size: em($base-font-size + 14);
-  color: palette(blue);
+  color: palette(black, medium);
   font-weight: 600;
   @include margin(0);
   @include padding(0);
