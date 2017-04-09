@@ -5,6 +5,11 @@ html {
   box-sizing: border-box;
   font-size: $base-font-size + px;
   line-height: $line-height-ratio;
+  background: url(/assets/images/forest-bg-dark.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 // Border Box all the things!
@@ -21,7 +26,7 @@ html {
 
 body {
   @include font-feature-settings('liga', 'kern', 'pnum', 'case');
-  color: $default-body-color;
+  color: palette(white);
   font-family: $base-font-family;
   overflow-x: hidden;
   min-height: 100%;
@@ -39,11 +44,19 @@ body {
 a {
   @include pointer;
   @include transition( all 0.2s ease-in-out );
-  color: $default-link-color;
+  color: palette(gray);
+  text-decoration:none;
 
   &:hover {
-    color: $default-link-color-hover;
+    color: palette(gold);
+    text-decoration:underline;
   }
+}
+
+.content-wrapper {
+  @include padding(null em(15));
+  //background: palette(white);
+    //opacity: 0.8;
 }
 
 //Site wrapper
@@ -364,7 +377,7 @@ a {
 h2 {
   font-family: $family-open-sans;
   font-size: em($base-font-size + 14);
-  color: palette(black, medium);
+  color: palette(gold);
   font-weight: 600;
   @include margin(0);
   @include padding(0);
@@ -520,5 +533,18 @@ hr {
 }
 
 .fixed-navigation {
-    padding-top: em(150);
+    padding-top: 90px;
+    position:relative;
+    padding-bottom:em(60);
+  }
+
+  strong {
+    color:palette(gold);
+  }
+
+  .breakpoint-margin {
+    margin-top:em(60);
+    @include media($large-up) {
+     margin-top:0;
+    }
   }

@@ -1,37 +1,16 @@
 //Section intros
 .masthead {
-  @include margin(em($section-padding) 0);
 
   &__heading {
-    font-family: $family-trajan-pro;
     font-weight: 400;
     font-size: em($base-font-size + 9);
-    color: palette(blue);
-    margin-bottom: em(5) !important;
+    color: palette(gold);
+    margin-bottom: em(25) !important;
     text-transform: uppercase;
+    border-bottom:1px solid palette(gold);
+    padding-bottom:em(10);
+    text-transform:uppercase;
   }
 
-  &__subhead {
-    color: palette(blue, bright);
-    font-size: em($base-font-size + 3);
-  }
-
-  &--section {
-    margin-top: 0;
-  }
-
-  &--centered {
-    text-align: center;
-  }
-
-  &--align-left {
-    text-align: left;
-  }
-
-  &--profile {
-    margin-left: em(30);
-    strong {
-      color: palette(blue, bright);
-    }
-  }
+  
 }

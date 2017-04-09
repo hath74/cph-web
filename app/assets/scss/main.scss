@@ -67,6 +67,7 @@ $fa-font-path: '/assets/scss/font-awesome/fonts/';
 @import 'site/site';
 
 //Component specific
+@import 'components/about';
 @import 'components/login';
 @import 'components/preview-player';
 @import 'components/video';

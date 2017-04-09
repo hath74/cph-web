@@ -1,0 +1,65 @@
+.about {
+    //background:#000;
+    // margin-right: -30px;
+    // margin-left:-30px;
+   
+    &__col-1 {
+        margin-left:-25px;
+        margin-right: -25px;
+        @include media($large-up) {
+         @include span-columns(6);
+       @include shift(6);
+        }
+        
+    }
+    &__col-2 {
+        @include media($large-up) {
+         @include span-columns(6);
+       @include shift(-12);
+        }
+        
+    }
+
+    &__content {
+        // position:absolute;
+        // top: 130px;
+        // left:em(70);
+        // width:40%;
+   
+    //padding: 60px;
+        
+        
+        p{
+         font-size:16px;
+        }
+        @include media($large-up) {
+            margin-top: 60px;
+    padding: 60px;
+          p{
+         font-size:20px;
+        }  
+        }
+         
+    }
+
+    &__banner {
+        //right: -30px;
+        position:relative;
+    }
+}
+
+.gallery {
+    &__collage {
+        display:none;
+       @include media($large-up) { 
+         display:block;
+        }
+    }
+
+    &__mobile {
+        display:block;
+       @include media($large-up) { 
+         display:none;
+        }
+    }
+}

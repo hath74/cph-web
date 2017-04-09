@@ -5,7 +5,7 @@ $(document).ready(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html, body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 120
         }, 1000);
         return false;
       }
@@ -33,7 +33,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   var menuToggle = $("#js-mobile-menu").unbind();
+  var navLink = $(".nav-item");
   $("#js-navigation-menu").removeClass("show");
+  navLink.on("click", function() {
+    $("#js-navigation-menu").removeAttr("style");
+  });
+
 
   menuToggle.on("click", function(e) {
     e.preventDefault();
