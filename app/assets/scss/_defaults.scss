@@ -31,6 +31,7 @@ $palettes: (
 	black: (
 		base:       #000000,
 		medium: #232020,
+		light: #2e2a2b,
 	),
 	blue: (
 		powder:     #d9e2ee,
@@ -103,6 +104,8 @@ Georgia,
 'Times New Roman',
 Times,
 serif;
+$family-oswald: 'Oswald', sans-serif;
+$family-mont: 'Montserrat', sans-serif;
 $base-font-family: $family-open-sans;
 $header-font-family: $family-open-sans;
 $header-font-weight: 600;

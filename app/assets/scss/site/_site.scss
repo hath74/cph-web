@@ -375,8 +375,9 @@ a {
 }
 
 h2 {
-  font-family: $family-open-sans;
+  font-family: $family-mont;
   font-size: em($base-font-size + 14);
+  letter-spacing: 5px;
   color: palette(gold);
   font-weight: 600;
   @include margin(0);
@@ -533,7 +534,7 @@ hr {
 }
 
 .fixed-navigation {
-    padding-top: 90px;
+    padding-top: 158px;
     position:relative;
     padding-bottom:em(60);
   }

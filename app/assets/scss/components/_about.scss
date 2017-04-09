@@ -27,12 +27,13 @@
         // width:40%;
    
     //padding: 60px;
-        
+         margin-top: 30px;
+    padding: 20px;
         
         p{
          font-size:16px;
         }
-        @include media($large-up) {
+        @include media($xxlarge-up) {
             margin-top: 60px;
     padding: 60px;
           p{
