@@ -83,7 +83,7 @@ $(".open-modal").on("click", function() {
   //Contact 
     
  $('#contact-form').submit(function(event) {
-
+     $('#contact-success').addClass('hide');
      $('.form-error').remove();
      $('.contact-loader').removeClass('hide');
 
@@ -131,7 +131,7 @@ $(".open-modal").on("click", function() {
          return false;
      }
 
-     var url = '/input/create_ticket.php';
+     var url = 'http://cascadiapublichouse.com/contact.php';
 
      // process the form
      $.ajax({
@@ -148,14 +148,14 @@ $(".open-modal").on("click", function() {
              .not(':button, :submit, :reset')
              .val('');
          //show success message
-         $('#contact-success').append('<div class="flash-success fade-in"><span>' + 'Thank you we will be in touch.' + '</span></div>');
+          $('#contact-success').removeClass('hide');
 
          $('.contact-loader').addClass('hide');
      })
 
      .fail(function(data) {
          console.log('fail', data);
-         $('#contact-success').remove();
+         $('#contact-success').addClass('hide');
          $('.contact-loader').addClass('hide');
      });
      event.preventDefault();
