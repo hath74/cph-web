@@ -124,6 +124,14 @@ header.navigation {
     z-index: 9999;
     border-bottom:1px solid palette(black, medium);
 
+    &.nav-icon {
+      padding-top:7px;
+      @include media ($horizontal-bar-mode) {
+      margin-right:10px;
+      padding-top:0;
+      }
+    }
+
     @include media ($horizontal-bar-mode) {
       background: transparent;
       display: inline;
