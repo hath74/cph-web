@@ -1,15 +1,8 @@
 
 html {
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
+  height:100%;
   font-size: $base-font-size + px;
   line-height: $line-height-ratio;
-  background: url(/assets/images/forest-bg-dark.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 // Border Box all the things!
@@ -32,6 +25,7 @@ body {
   min-height: 100%;
   position: relative;
   padding-bottom: 150px;
+  background: palette(black);
 
   &.-no-scroll {
     overflow: hidden;
@@ -39,6 +33,25 @@ body {
   @include media($xlarge-up) {
     padding-bottom: 150px;
   }
+}
+
+.background {
+background: url('/assets/images/forest-bg-dark.jpg') no-repeat;
+    position: absolute; 
+    height: 100%; 
+    min-height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: 50% 50%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    background-size: cover;
+    @include media($large-up) {
+    background-attachment: fixed;
+    }
 }
 
 a {
