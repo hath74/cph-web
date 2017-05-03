@@ -1,0 +1,10 @@
+.vendors {
+  &__item {
+    margin-right: em(30);
+    margin-bottom: em(30);
+  }
+
+  &--last {
+    margin-bottom:0;
+  }
+}
