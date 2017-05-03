@@ -118,6 +118,7 @@ $portrait: new-breakpoint(orientation portrait);
 $small-up: new-breakpoint(min-width 0px);
 $small-only: new-breakpoint(max-width 479px);
 $small-down: new-breakpoint(max-width 768px);
+$tiny-down: new-breakpoint(max-width 320px);
 $medium-up: new-breakpoint(min-width 480px);
 $medium-only: new-breakpoint(min-width 480px max-width 767px);
 $to-large: new-breakpoint(max-width 767px);
@@ -143,6 +144,7 @@ $sizes: (
 	'small-up'   : $small-up,
 	'small-only' : $small-only,
 	'small-down' : $small-down,
+	'tiny-down' : $tiny-down,
 	'medium-up'  : $medium-up,
 	'medium-only': $medium-only,
 	'to-large'   : $to-large,

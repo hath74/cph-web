@@ -70,3 +70,11 @@
   right: 0;
   z-index: 9999;
 }
+
+.vendors {
+  &__item {
+    display:inline-block;
+    margin-right: em(30);
+    margin-bottom: em(30);
+  }
+}

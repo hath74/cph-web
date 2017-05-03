@@ -550,6 +550,10 @@ hr {
     padding-top: 158px;
     position:relative;
     padding-bottom:em(60);
+
+    @include media($small-down) {
+      padding-top: 125px;
+    }
   }
 
   strong {
