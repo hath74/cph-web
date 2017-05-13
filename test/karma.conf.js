@@ -25,6 +25,8 @@ module.exports = function(config) {
       '../app/bower_components/jquery/dist/jquery.js',
       '../app/bower_components/underscore/underscore.js',
       '../app/bower_components/moment/moment.js',
+      '../app/bower_components/photoswipe/dist/photoswipe.js',
+      '../app/bower_components/photoswipe/dist/photoswipe-ui-default.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",

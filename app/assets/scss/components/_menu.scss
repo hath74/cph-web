@@ -1,0 +1,14 @@
+.menu {
+    &__col {
+        @include span-columns(4);
+        text-align:center;
+
+        img {
+            margin: 0 auto;
+            &:hover {
+            @include transition(all 0.2s ease-in-out );
+            opacity:0.5
+            }
+        }
+    }
+}

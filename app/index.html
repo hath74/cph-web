@@ -18,6 +18,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
   <!-- build:css app/assets/css/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/photoswipe/dist/photoswipe.css" />
+  <link rel="stylesheet" href="bower_components/photoswipe/dist/default-skin/default-skin.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css app/assets/css/main.min.css -->
@@ -64,6 +66,8 @@
       <nav role="navigation">
         <ul id="js-navigation-menu" class="navigation-menu show">
           <li class="nav-link"><a class="nav-item" href="#about">About</a></li>
+          <li class="nav-link"><a class="nav-item" href="#menus">Menus</a></li>
+          <li class="nav-link"><a class="nav-item" href="#gallery">Gallery</a></li>
           <li class="nav-link"><a class="nav-item" href="#vendors">Food Vendors</a></li>
           <li class="nav-link"><a class="nav-item" href="#location">Location & Hours</a></li>
           <li class="nav-link"><a class="nav-item" href="#contact">Contact</a></li>
@@ -88,9 +92,149 @@
             patio, Cascadia Public House is the perfect place to hangout and spend your summer nights by the fire.</p>
         </div>
       </section>
+      <section class="section menu">
+        <h2 id="menus" class="masthead__heading">MENUS</h2>
+        <div class="menu__col">
+          <h3>Lunch</h3>
+          <a href="assets/menu/lunch.pdf" target="_blank"><img src="assets/menu/lunch-thumb.png" class="img-responsive" alt="lunch menu"></a>
+        </div>
+        <div class="menu__col">
+          <h3>Dinner</h3>
+          <a href="assets/menu/dinner.pdf" target="_blank"><img src="assets/menu/dinner-thumb.png" class="img-responsive" alt="dinner menu"></a>
+        </div>
+        <div class="menu__col">
+          <h3>Kids</h3>
+          <a href="assets/menu/kids.pdf" target="_blank"><img src="assets/menu/kids-thumb.png" class="img-responsive" alt="kids menu"></a>
+        </div>
+      </section>
       <section class="section gallery">
-        <img src="assets/images/cph-collage.png" class="img-responsive gallery__collage" alt="Cascadia Public House">
-        <img src="assets/images/cph-food.png" class="img-responsive gallery__mobile" alt="Cascadia Public House">
+        <h2 id="gallery" class="masthead__heading">GALLERY</h2>
+        <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          <figure itemprop="associatedMedia" class="gallery__col1" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery10.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb1.jpg" class="img-responsive gallery__thumb" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="gallery__col2" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery13.jpg" itemprop="contentUrl" data-size="1000x1333">
+              <img src="assets/images/gallery/thumb8.jpg" class="img-responsive gallery__thumb" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="gallery__col3" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery8.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb4.jpg" class="img-responsive gallery__thumb" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="gallery__col4" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery4.jpg" itemprop="contentUrl" data-size="768x960">
+              <img src="assets/images/gallery/thumb5.jpg" class="img-responsive gallery__thumb" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="gallery__col5" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery11.jpg" itemprop="contentUrl" data-size="1000x1778">
+              <img src="assets/images/gallery/thumb11.jpg" class="img-responsive gallery__thumb" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery1.jpg" itemprop="contentUrl" data-size="768x960">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery2.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery3.jpg" itemprop="contentUrl" data-size="647x764">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery5.jpg" itemprop="contentUrl" data-size="714x594">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery6.jpg" itemprop="contentUrl" data-size="568x616">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery7.jpg" itemprop="contentUrl" data-size="809x605">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery9.jpg" itemprop="contentUrl" data-size="1000x1333">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery12.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery14.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+          <figure itemprop="associatedMedia" class="hide" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="assets/images/gallery/gallery15.jpg" itemprop="contentUrl" data-size="1000x750">
+              <img src="assets/images/gallery/thumb5.jpg" itemprop="thumbnail" alt="Image description" />
+            </a>
+          </figure>
+        </div>
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+          <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+          <div class="pswp__bg"></div>
+          <!-- Slides wrapper with overflow:hidden. -->
+          <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+              <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                  <div class="pswp__preloader__icn">
+                    <div class="pswp__preloader__cut">
+                      <div class="pswp__preloader__donut"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+              </div>
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+              <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<img src="assets/images/cph-collage.png" class="img-responsive gallery__collage" alt="Cascadia Public House">
+        <img src="assets/images/cph-food.png" class="img-responsive gallery__mobile" alt="Cascadia Public House">-->
       </section>
       <section class="section container vendors">
         <h2 id="vendors" class="masthead__heading">FOOD VENDORS</h2>
@@ -128,34 +272,34 @@
             </div>
           </div>
         </div>
-          <div class="column__wrapper">
-            <div class="column--1of4">
-              <div class="vendors__item">
-                <h3>Rogue Creamery:</h3>
-                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Grants Pass, OR</p>
-                <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Cheese</p>
-                <a href="http://www.roguecreamery.com" target="_blank">Visit website</a>
-              </div>
-            </div>
-            <div class="column--1of4">
-              <div class="vendors__item">
-                <h3>Hills Meats:</h3>
-                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Pendleton, OR</p>
-                <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Bacon</p>
-                <a href="http://hillmeat.com" target="_blank">Visit website</a>
-              </div>
-            </div>
-            <div class="column--1of4">
-              <div class="vendors__item vendors--last">
-                <h3>Alpine Bakery Co.:</h3>
-                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Spokane, WA</p>
-                <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Bread & Buns</p>
-                <a href="https://www.facebook.com/AlpineBistroandBakery/" target="_blank">Visit Facebook page</a>
-              </div>
+        <div class="column__wrapper">
+          <div class="column--1of4">
+            <div class="vendors__item">
+              <h3>Rogue Creamery:</h3>
+              <p><i class="fa fa-map-marker" aria-hidden="true"></i> Grants Pass, OR</p>
+              <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Cheese</p>
+              <a href="http://www.roguecreamery.com" target="_blank">Visit website</a>
             </div>
           </div>
+          <div class="column--1of4">
+            <div class="vendors__item">
+              <h3>Hills Meats:</h3>
+              <p><i class="fa fa-map-marker" aria-hidden="true"></i> Pendleton, OR</p>
+              <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Bacon</p>
+              <a href="http://hillmeat.com" target="_blank">Visit website</a>
+            </div>
+          </div>
+          <div class="column--1of4">
+            <div class="vendors__item vendors--last">
+              <h3>Alpine Bakery Co.:</h3>
+              <p><i class="fa fa-map-marker" aria-hidden="true"></i> Spokane, WA</p>
+              <p><i class="fa fa-angle-double-right" aria-hidden="true"></i> Bread & Buns</p>
+              <a href="https://www.facebook.com/AlpineBistroandBakery/" target="_blank">Visit Facebook page</a>
+            </div>
+          </div>
+        </div>
       </section>
-      <section class="section container contact">
+      <section class="section section--no-pad container contact">
         <div id="location" class="contact__col">
           <h2 class="masthead__heading">LOCATION & HOURS</h2>
           <div class="contact__details">
@@ -214,18 +358,18 @@
           </form>
         </div>
       </section>
-      </div>
     </div>
-    <section id="map" class="section section--map">
-      <div id="map_canvas"></div>
-    </section>
-    <footer class="footer">
-      <div class="container container--outer">
-        <p class="footer__copyright">
-          ©2017 – Cascadia Public House &nbsp;| <a href="https://www.facebook.com/cascadiapublichouse/" target="_blank" title="Facebook"><i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i></a>
-          <a class="nav-item" href="https://www.instagram.com/cascadiapublichouse/?hl=en" target="_blank" title="Instagram"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
-      </div>
   </div>
+  <section id="map" class="section section--map">
+    <div id="map_canvas"></div>
+  </section>
+  <footer class="footer">
+    <div class="container container--outer">
+      <p class="footer__copyright">
+        ©2017 – Cascadia Public House &nbsp;| <a href="https://www.facebook.com/cascadiapublichouse/" target="_blank" title="Facebook"><i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i></a>
+        <a class="nav-item" href="https://www.instagram.com/cascadiapublichouse/?hl=en" target="_blank" title="Instagram"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+    </div>
+    </div>
   </footer>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu-GirWXGOVeTIUO-U7_qja8ZVHkGFc44"></script>
   <script>
@@ -395,6 +539,8 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/photoswipe/dist/photoswipe.js"></script>
+  <script src="bower_components/photoswipe/dist/photoswipe-ui-default.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js app/assets/scripts/site.min.js -->

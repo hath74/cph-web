@@ -1,0 +1,29 @@
+.gallery {
+    &__col1 {
+        @include span-columns(3);
+    }
+
+     &__col2 {
+        @include span-columns(2);
+    }
+
+     &__col3 {
+        @include span-columns(3);
+    }
+
+     &__col4 {
+        @include span-columns(2);
+    }
+
+     &__col5 {
+        @include span-columns(2);
+        margin-right:0;
+    }
+
+    &__thumb {
+        @include transition(all 0.2s ease-in-out );
+        &:hover {
+            opacity:0.5;
+        }
+    }
+}
