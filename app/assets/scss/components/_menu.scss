@@ -1,7 +1,13 @@
 .menu {
+        
+        
     &__col {
-        @include span-columns(4);
         text-align:center;
+
+        @include media($medium-up) {
+           @include span-columns(6);
+           margin-bottom: 0 !important;
+        }
 
         img {
             margin: 0 auto;
@@ -9,6 +15,10 @@
             @include transition(all 0.2s ease-in-out );
             opacity:0.5
             }
+        }
+
+        &:nth-of-type(1) {
+            margin-bottom: em(20);
         }
     }
 }
