@@ -2,20 +2,34 @@
     //background:#000;
     // margin-right: -30px;
     // margin-left:-30px;
+
+    &__desktop {
+        display: none;
+        @include media($large-up) { 
+            display: block;
+        }
+    }
+
+    &__mobile {
+        display: block;
+        @include media($large-up) { 
+            display: none;
+        }
+    }
    
     &__col-1 {
-        margin-left:-25px;
-        margin-right: -25px;
+       // margin-left:-25px;
+      //  margin-right: -25px;
         @include media($large-up) {
          @include span-columns(6);
-       @include shift(6);
+     //  @include shift(6);
         }
         
     }
     &__col-2 {
         @include media($large-up) {
          @include span-columns(6);
-       @include shift(-12);
+      // @include shift(-12);
         }
         
     }
