@@ -66,6 +66,18 @@ a {
   }
 }
 
+.cta-link {
+  @include pointer;
+  @include transition( all 0.2s ease-in-out );
+  color: palette(gold);
+  text-decoration:underline;
+
+  &:hover {
+    color: palette(gray);
+    text-decoration:none;
+  }
+}
+
 .content-wrapper {
   @include padding(null em(15));
   //background: palette(white);

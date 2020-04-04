@@ -1,0 +1,22 @@
+.orders {
+  &__item {
+    margin-right: em(30);
+    margin-bottom: em(30);
+  }
+
+  &__media-link {
+    @include transition(all 0.2s ease-in-out);
+
+  &:hover {
+    opacity: 0.5
+  }
+  }
+
+  &--last {
+    margin-bottom:0;
+  }
+
+  i {
+    color:palette(gold);
+  }
+}
