@@ -248,6 +248,16 @@ initPhotoSwipeFromDOM('.my-gallery');
       }
     }
   });
+
+  if(window.location.hash) {
+    var hash = window.location.hash;
+  
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top - 190
+    }, 1000, 'swing');
+  }
+
+
   //navigation
   $(window).resize(function() {
   var more = document.getElementById("js-navigation-more");
