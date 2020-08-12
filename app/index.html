@@ -137,22 +137,29 @@
           </div>
         </div>
       </section>
+
       <section class="section menu">
         <h2 id="menus" class="masthead__heading">MENUS</h2>
         <div class="column__wrapper">
           <div class="menu__col">
             <h3>Lunch/Dinner</h3>
-            <a href="assets/menu/menu.pdf" target="_blank"><img src="assets/menu/menu-thumb.png" class="img-responsive"
-                alt="lunch/dinner menu"></a>
+            <a href="assets/menu/menu.pdf" target="_blank">
+              <img src="assets/menu/menu-thumb.jpg" class="img-responsive" alt="lunch/dinner menu">
+              <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+              </a>
           </div>
-          <div class="menu__col">
+          <!-- <div class="menu__col">
             <h3>Kids</h3>
-            <a href="assets/menu/kids.pdf" target="_blank"><img src="assets/menu/kids-thumb.png" class="img-responsive" alt="kids menu"></a>
-          </div>
+            <a href="assets/menu/kids.pdf" target="_blank"><img src="assets/menu/kids-thumb.jpg" class="img-responsive" alt="kids menu">
+              <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            </a>
+          </div> -->
           <div class="menu__col">
             <h3>Plant Based</h3>
-            <a href="assets/menu/plant.pdf" target="_blank"><img src="assets/menu/plant-thumb.png" class="img-responsive"
-                alt="plant based menu"></a>
+            <a href="assets/menu/plant.pdf" target="_blank"><img src="assets/menu/plant-thumb.jpg" class="img-responsive"
+                alt="plant based menu">
+                <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+              </a>
           </div>
           <!-- <div class="menu__col">
           <h3>Liquor Store</h3>
@@ -160,8 +167,17 @@
         </div> -->
         <div class="menu__col">
           <h3>Happy Hour</h3>
-          <a href="assets/menu/happy-hour.pdf" target="_blank"><img src="assets/menu/happy-hour-thumb.png" class="img-responsive"
-              alt="happy hour menu"></a>
+          <a href="assets/menu/happy-hour.pdf" target="_blank"><img src="assets/menu/happy-hour-thumb.jpg" class="img-responsive"
+              alt="happy hour menu">
+              <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            </a>
+        </div>
+        <div class="menu__col">
+          <h3>Cocktails</h3>
+          <a href="assets/menu/cocktails.pdf" target="_blank"><img src="assets/menu/cocktails-thumb.jpg" class="img-responsive"
+              alt="cocktails menu">
+              <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+            </a>
         </div>
           <!-- <div class="menu__col">
             <h3>Daily Specials</h3>
@@ -176,13 +192,31 @@
               </div> -->
           <div class="menu__col">
             <h3>Wine</h3>
-            <a href="assets/menu/wine.pdf" target="_blank"><img src="assets/menu/wines-thumb.png" class="img-responsive"
-                alt="wine menu"></a>
+            <a href="assets/menu/wine.pdf" target="_blank"><img src="assets/menu/wine-thumb.jpg" class="img-responsive"
+                alt="wine menu">
+                <div class="menu__btn">View Menu <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+              </a>
           </div>
           <div class="menu__col">
-            <h3>Cocktails</h3>
-            <a href="assets/menu/cocktails.pdf" target="_blank"><img src="assets/menu/cocktails-thumb.png" class="img-responsive"
-                alt="cocktails menu"></a>
+            <h3>Draft Beer List</h3>
+            <div class="modal-cph">
+              <label for="modal-1">
+                <div class="modal-trigger link"><img src="assets/menu/draft-list.jpg" class="img-responsive"
+                  alt="wine menu">
+                  <div class="menu__btn">View List <i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                </div>
+              </label>
+              <input class="modal-state" id="modal-1" type="checkbox" />
+              <div class="modal-fade-screen">
+                <div class="modal-inner">
+                  <div class="modal-close" for="modal-1"></div>
+                  <div id="menu-container"></div>
+                  <script type="text/javascript">
+                    !function getScript(e,t){var a=document.createElement("script"),n=document.getElementsByTagName("script")[0];a.async=1,n.parentNode.insertBefore(a,n),a.onload=a.onreadystatechange=function(e,n){(n||!a.readyState||/loaded|complete/.test(a.readyState))&&(a.onload=a.onreadystatechange=null,a=undefined,n||t&&t())},a.src=e}("https://embed-menu-preloader.untappdapi.com/embed-menu-preloader.min.js",function(){PreloadEmbedMenu("menu-container",29060,111782)});
+                  </script>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- <div class="menu__col">
           <h3>Liquor Store</h3>
